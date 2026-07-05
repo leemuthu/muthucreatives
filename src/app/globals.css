@@ -20,7 +20,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* clip instead of hidden: hidden creates a scroll container and breaks
+     position: sticky, which the page-flip panels and card stack rely on */
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -29,6 +32,7 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {

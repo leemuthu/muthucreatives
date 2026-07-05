@@ -5,7 +5,7 @@ import HeroVisual from "@/components/hero/HeroVisual";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-night">
       <HeroVisual />
       <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-32 md:px-10 md:pb-32 md:pt-44">
         <p className="hero-fade font-mono text-xs font-bold uppercase tracking-widest text-flare">
