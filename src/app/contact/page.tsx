@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
@@ -45,9 +46,18 @@ export default function ContactPage() {
               <p className="font-mono text-xs uppercase tracking-widest text-brass">
                 Fastest option
               </p>
-              <h2 className="mt-3 font-display text-3xl text-ink">
-                Book a free call
-              </h2>
+              <div className="mt-3 flex items-center gap-4">
+                <Image
+                  src="/about/lee-muthu.jpg"
+                  alt="Lee Muthu, founder of Muthu Creatives"
+                  width={56}
+                  height={56}
+                  className="rounded-full border border-brass/40 object-cover"
+                />
+                <h2 className="font-display text-3xl text-ink">
+                  Book a free call
+                </h2>
+              </div>
               <p className="mt-4 text-sm leading-relaxed text-muted">
                 20 minutes with Lee, the founder — not a sales rep. We&apos;ll
                 talk through what you&apos;re trying to make happen and tell

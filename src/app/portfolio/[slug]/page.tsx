@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import CtaBanner from "@/components/CtaBanner";
 import JsonLd from "@/components/JsonLd";
 import BookCallButton from "@/components/BookCallButton";
+import StatCounter from "@/components/StatCounter";
 import { caseStudies, getCaseStudy } from "@/lib/case-studies";
 import { getService } from "@/lib/services";
 import { site } from "@/lib/site";
@@ -68,23 +70,54 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         }}
       >
         <div className="mx-auto max-w-6xl px-5 pb-16 pt-36 md:px-8 md:pb-20 md:pt-44">
-          <p className="font-mono text-xs uppercase tracking-widest text-brass">
-            Case study · {study.industry}
-          </p>
-          <h1 className="mt-5 max-w-3xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            {study.name}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            {study.summary}
-          </p>
-          <dl className="mt-10 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-3">
-            {study.stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col border-t border-brass/40 pt-4">
-                <dt className="order-2 mt-1 text-sm text-muted">{stat.label}</dt>
-                <dd className="order-1 font-mono text-2xl text-brass">{stat.value}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-brass">
+                Case study · {study.industry}
+              </p>
+              <h1 className="mt-5 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+                {study.name}
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+                {study.summary}
+              </p>
+              <dl className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+                {study.stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="flex flex-col border-t border-brass/40 pt-4"
+                  >
+                    <dt className="order-2 mt-1 text-sm text-muted">{stat.label}</dt>
+                    <dd className="order-1 font-mono text-2xl text-brass">
+                      <StatCounter value={stat.value} />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <Reveal>
+              <figure className="overflow-hidden rounded-sm border border-line bg-night shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
+                <div
+                  aria-hidden="true"
+                  className="flex items-center gap-1.5 border-b border-line bg-surface px-4 py-3"
+                >
+                  <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                </div>
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src={study.image}
+                    alt={study.imageAlt}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover object-top"
+                  />
+                </div>
+              </figure>
+            </Reveal>
+          </div>
         </div>
       </header>
 

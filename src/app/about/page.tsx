@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CtaBanner from "@/components/CtaBanner";
@@ -94,6 +95,20 @@ export default function AboutPage() {
 
           <Reveal delay={0.1}>
             <div className="space-y-8 border border-line bg-surface p-7">
+              <figure>
+                <div className="relative aspect-square overflow-hidden">
+                  <Image
+                    src="/about/lee-muthu.jpg"
+                    alt="Lee Muthu, founder of Muthu Creatives, in Houston, TX"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 font-mono text-xs tracking-wide text-muted">
+                  Lee Muthu — founder, designer, developer
+                </figcaption>
+              </figure>
               <div>
                 <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
                   Studio facts

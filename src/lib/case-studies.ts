@@ -12,7 +12,9 @@ export type CaseStudy = {
   stats: { value: string; label: string }[];
   quote?: { text: string; author: string; role: string };
   stack: string[];
-  cover: { from: string; to: string; glyph: string };
+  cover: { from: string; to: string };
+  image: string;
+  imageAlt: string;
   featured: boolean;
 };
 
@@ -67,7 +69,9 @@ export const caseStudies: CaseStudy[] = [
       role: "Marketing Director, SaaS",
     },
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#1c2733", to: "#131313", glyph: "FL" },
+    cover: { from: "#1c2733", to: "#131313" },
+    image: "/work/flowline.png",
+    imageAlt: "Flowline SaaS landing page hero built by Muthu Creatives — bold serif headline, single call to action, and social proof",
     featured: true,
   },
   {
@@ -115,7 +119,9 @@ export const caseStudies: CaseStudy[] = [
       { value: "100%", label: "of services indexable, up from a PDF" },
     ],
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#2e2420", to: "#131313", glyph: "ML" },
+    cover: { from: "#2e2420", to: "#131313" },
+    image: "/work/maison-lumiere.png",
+    imageAlt: "Maison Lumière salon website built by Muthu Creatives — elegant serif hero with booking call to action beside salon photography",
     featured: true,
   },
   {
@@ -163,7 +169,9 @@ export const caseStudies: CaseStudy[] = [
       { value: "<1s", label: "mobile load on 4G" },
     ],
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#33241c", to: "#131313", glyph: "E&R" },
+    cover: { from: "#33241c", to: "#131313" },
+    image: "/work/ember-rye.png",
+    imageAlt: "Ember & Rye restaurant website built by Muthu Creatives — dark photography-led hero with reservation call to action",
     featured: true,
   },
   {
@@ -211,7 +219,9 @@ export const caseStudies: CaseStudy[] = [
       { value: "100%", label: "source code delivered to the client" },
     ],
     stack: ["React", "TypeScript", "REST APIs", "Tailwind CSS"],
-    cover: { from: "#1e2a26", to: "#131313", glyph: "AA" },
+    cover: { from: "#1e2a26", to: "#131313" },
+    image: "/work/apex-analytics.png",
+    imageAlt: "Apex Analytics dashboard built by Muthu Creatives — live revenue charts, traffic sources, and transaction feed in a dark UI",
     featured: false,
   },
   {
@@ -264,7 +274,9 @@ export const caseStudies: CaseStudy[] = [
       role: "Operations Manager, Ecommerce",
     },
     stack: ["React", "TypeScript", "REST APIs", "Tailwind CSS"],
-    cover: { from: "#292331", to: "#131313", glyph: "FF" },
+    cover: { from: "#292331", to: "#131313" },
+    image: "/work/flowforge.png",
+    imageAlt: "FlowForge visual workflow builder built by Muthu Creatives — drag-and-drop automation canvas with run history",
     featured: false,
   },
   {
@@ -312,7 +324,9 @@ export const caseStudies: CaseStudy[] = [
       { value: "100%", label: "on her own domain and brand" },
     ],
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#2f2029", to: "#131313", glyph: "MV" },
+    cover: { from: "#2f2029", to: "#131313" },
+    image: "/work/maya-voss.png",
+    imageAlt: "Maya Voss creator link-in-bio page built by Muthu Creatives — branded profile with featured links and audience stats",
     featured: false,
   },
 ];
