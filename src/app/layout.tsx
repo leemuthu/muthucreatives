@@ -41,9 +41,17 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_US",
     url: site.url,
+    images: [
+    {
+      url: "/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "Muthu Creatives — We build sites that convert",
+    },
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
