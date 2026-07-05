@@ -83,10 +83,10 @@ export default function BookingModalProvider({ children }: { children: ReactNode
                 </span>
               </button>
             </div>
-            <div className="overflow-y-auto">
+            <div className="overflow-y-auto bg-paper p-3">
               <iframe
                 src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2w_svIWwEhW062nhiZNA5dXpARHHD8Ym3MAbGuAaYbN6d-j84JgtXazAXiH0mv1kWyXNHFPe9d?gv=true"
-                style={{ border: 0 }}
+                style={{ border: 0, background: "#efe9dc", colorScheme: "light" }}
                 width="100%"
                 height="600"
                 frameBorder="0"
