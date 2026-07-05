@@ -15,6 +15,7 @@ export type CaseStudy = {
   accent: string;
   image: string;
   imageAlt: string;
+  demoUrl?: string;
   featured: boolean;
 };
 
@@ -73,6 +74,7 @@ export const caseStudies: CaseStudy[] = [
     image: "/work/flowline.png",
     imageAlt:
       "Flowline SaaS landing page hero built by Muthu Creatives, with a bold serif headline, a single call to action and review proof",
+    demoUrl: "/demos/flowline.html",
     featured: true,
   },
   {
@@ -124,6 +126,7 @@ export const caseStudies: CaseStudy[] = [
     image: "/work/maison-lumiere.png",
     imageAlt:
       "Maison Lumière salon website built by Muthu Creatives, with an elegant serif hero and booking call to action next to salon photography",
+    demoUrl: "/demos/maison-lumiere.html",
     featured: true,
   },
   {
@@ -175,6 +178,7 @@ export const caseStudies: CaseStudy[] = [
     image: "/work/ember-rye.png",
     imageAlt:
       "Ember & Rye restaurant website built by Muthu Creatives, with a dark photography-led hero and a reservation call to action",
+    demoUrl: "/demos/ember-rye.html",
     featured: true,
   },
   {
@@ -226,6 +230,7 @@ export const caseStudies: CaseStudy[] = [
     image: "/work/apex-analytics.png",
     imageAlt:
       "Apex Analytics dashboard built by Muthu Creatives, showing live revenue charts, traffic sources and a transaction feed in a dark interface",
+    demoUrl: "/demos/apex-analytics.html",
     featured: false,
   },
   {
@@ -333,6 +338,7 @@ export const caseStudies: CaseStudy[] = [
     image: "/work/maya-voss.png",
     imageAlt:
       "Maya Voss link-in-bio page built by Muthu Creatives, showing a branded profile with featured links and audience stats",
+    demoUrl: "/demos/maya-voss.html",
     featured: false,
   },
 ];

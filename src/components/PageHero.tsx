@@ -13,7 +13,7 @@ export default function PageHero({ eyebrow, title, lede, children }: PageHeroPro
       <p className="font-mono text-xs font-bold uppercase tracking-widest text-flare">
         {eyebrow}
       </p>
-      <h1 className="type-wide mt-5 max-w-4xl text-5xl font-black uppercase leading-[0.95] text-ink md:text-7xl">
+      <h1 className="type-wide mt-5 max-w-4xl break-words text-5xl font-black uppercase leading-[0.95] text-ink md:text-7xl">
         {title}
       </h1>
       {lede && (

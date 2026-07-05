@@ -59,9 +59,25 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     }),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Work", item: `${site.url}/portfolio` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: study.name,
+        item: `${site.url}/portfolio/${study.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <JsonLd data={caseStudySchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       <header className="border-b border-hairline">
         <div className="mx-auto max-w-7xl px-5 pb-16 pt-32 md:px-10 md:pb-20 md:pt-44">
@@ -70,7 +86,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <p className="font-mono text-xs font-bold uppercase tracking-widest" style={{ color: study.accent }}>
                 Case study · {study.industry}
               </p>
-              <h1 className="type-wide mt-5 text-6xl font-black uppercase leading-[0.92] text-ink md:text-8xl">
+              <h1 className="type-wide mt-5 break-words text-6xl font-black uppercase leading-[0.92] text-ink md:text-8xl">
                 {study.name}
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist">
@@ -89,13 +105,24 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
             <Reveal>
               <figure className="overflow-hidden border border-hairline bg-coal shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
-                <div
-                  aria-hidden="true"
-                  className="flex items-center gap-1.5 border-b border-hairline bg-night px-4 py-3"
-                >
-                  <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
+                <div className="flex items-center gap-3 border-b border-hairline bg-night px-4 py-3">
+                  <div aria-hidden="true" className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-hairline" />
+                  </div>
+                  {study.demoUrl ? (
+                    <a
+                      href={study.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 truncate rounded-sm border border-hairline bg-coal px-3 py-1 text-center font-mono text-xs text-mist transition-colors hover:text-flare"
+                    >
+                      View live demo ↗
+                    </a>
+                  ) : (
+                    <div className="flex-1" />
+                  )}
                 </div>
                 <div className="relative aspect-[16/10]">
                   <Image

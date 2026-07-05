@@ -51,7 +51,7 @@ export default function CtaBanner({
               className="rounded-full border border-flare/60 object-cover"
             />
             <p className="text-left font-mono text-xs tracking-wide text-mist">
-              You’ll talk to Lee. The founder, and the person who builds it.
+              You’ll talk to Lee, the founder. Your contact from start to finish.
             </p>
           </div>
         </Reveal>

@@ -12,7 +12,7 @@ import { testimonials } from "@/lib/testimonials";
 export const metadata: Metadata = {
   title: "About Lee Muthu | Founder of Muthu Creatives, Houston, TX",
   description:
-    "Muthu Creatives is a founder-led web design studio in Houston. Lee Muthu studied Computer Science at the University of Houston and personally builds every project.",
+    "Muthu Creatives is a Houston web design agency led by founder Lee Muthu, who studied Computer Science at the University of Houston and works hands-on with every client from kickoff to launch.",
   alternates: {
     canonical: "/about",
   },
@@ -27,6 +27,7 @@ const aboutSchema = {
     "@type": "Person",
     name: site.founder,
     jobTitle: "Founder",
+    image: `${site.url}/about/lee-muthu.jpg`,
     worksFor: { "@id": `${site.url}/#business` },
     alumniOf: {
       "@type": "CollegeOrUniversity",
@@ -64,7 +65,7 @@ export default function AboutPage() {
             Built on CS. <span className="text-flare">Scaled for business.</span>
           </>
         }
-        lede="Muthu Creatives is a one-founder studio in Houston. Lee designs and builds every project himself, which is exactly why clients never get handed off, watered down or surprised."
+        lede="Muthu Creatives is a small, senior web design agency based in Houston. Lee leads every engagement personally, from the first call to launch, so nothing gets watered down passing between departments."
       />
 
       <section className="bg-paper text-night">
@@ -72,19 +73,28 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-[3fr_2fr]">
             <Reveal className="max-w-2xl space-y-5">
               <p className="text-base leading-relaxed">
-                Lee studied Computer Science at the University of Houston. That
-                background means your site gets engineered, not assembled from
-                a theme. Clean code, fast loads and structure search engines
-                can actually read aren’t upsells here. They’re just how the
-                work gets done.
+                Lee studied Computer Science at the University of Houston, and
+                that background sets the standard for how the whole team
+                builds: sites get engineered, not assembled from a theme.
+                Clean code, fast loads and structure search engines can
+                actually read aren’t upsells here. They’re just how the work
+                gets done.
               </p>
               <p className="text-base leading-relaxed">
-                But here’s the thing: most projects don’t fail on code. They
-                fail because nobody asked the right questions first. What
-                should this site make happen? Calls, bookings, orders? Who’s
-                it for? What’s the one thing a visitor should do? We ask all
-                of that up front, in plain English, so the thing that gets
-                built is the thing your business needed.
+                You’ll deal directly with Lee from the first call through
+                launch, not a project manager relaying messages to a team
+                you’ve never met. He scopes the work, sits in on the
+                important decisions, and signs off before anything ships. The
+                designers and developers behind him handle the production
+                work, but he’s the one accountable for what lands in your
+                inbox.
+              </p>
+              <p className="text-base leading-relaxed">
+                Most projects don’t fail on code. They fail because nobody
+                asked the right questions first. What should this site make
+                happen? Calls, bookings, orders? Who’s it for? We ask all of
+                that up front, in plain English, so what gets built is what
+                your business actually needed.
               </p>
               <p className="text-base leading-relaxed">
                 And we don’t hand off code and vanish. You own everything:
@@ -112,11 +122,11 @@ export default function AboutPage() {
                 </figure>
                 <div>
                   <h2 className="font-mono text-xs font-bold uppercase tracking-widest text-stone">
-                    Studio facts
+                    Agency facts
                   </h2>
                   <dl className="mt-4 space-y-3 text-sm">
                     <div className="flex justify-between gap-4">
-                      <dt className="text-stone">Founder</dt>
+                      <dt className="text-stone">Founder & lead</dt>
                       <dd className="font-bold">{site.founder}</dd>
                     </div>
                     <div className="flex justify-between gap-4">
@@ -126,6 +136,10 @@ export default function AboutPage() {
                     <div className="flex justify-between gap-4">
                       <dt className="text-stone">Serving</dt>
                       <dd className="font-bold">Clients nationwide</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-stone">Your point of contact</dt>
+                      <dd className="text-right font-bold">Lee, start to finish</dd>
                     </div>
                     <div className="flex justify-between gap-4">
                       <dt className="text-stone">Education</dt>

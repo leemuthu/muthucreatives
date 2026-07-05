@@ -18,7 +18,7 @@ export default function ServicesSection() {
                 id="services-heading"
                 className="type-wide mt-4 max-w-2xl text-5xl font-black uppercase leading-[0.95] md:text-7xl"
               >
-                Four things, done right.
+                Five things, done right.
               </h2>
             </div>
             <Link
@@ -50,10 +50,7 @@ export default function ServicesSection() {
                     </div>
                     <div className="flex items-center gap-6 md:flex-col md:items-end md:gap-2">
                       <p className="font-mono text-xs tracking-wide text-stone transition-colors group-hover:text-mist">
-                        {service.slug === "landing-pages" && "from $500 · ~1 week"}
-                        {service.slug === "business-websites" && "from $1,500 · 2 to 4 weeks"}
-                        {service.slug === "web-apps" && "from $1,500 · 1 to 6 weeks"}
-                        {service.slug === "automations" && "from $500 · days, not months"}
+                        {service.timelineShort}
                       </p>
                       <span
                         aria-hidden="true"

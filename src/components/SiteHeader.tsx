@@ -56,14 +56,14 @@ export default function SiteHeader() {
           <BookCallButton size="sm" />
         </nav>
 
-        <div className="flex items-center gap-3 md:hidden">
-          <BookCallButton size="sm" />
+        <div className="flex items-center gap-2 md:hidden">
+          <BookCallButton size="sm" label="Book" />
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 text-ink"
+            className="flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1.5 text-ink"
           >
             <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
             <span

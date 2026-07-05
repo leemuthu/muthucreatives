@@ -1,4 +1,6 @@
-import { site } from "@/lib/site";
+"use client";
+
+import { useBookingModal } from "@/components/BookingModal";
 
 const variants = {
   solid: "bg-flare text-night hover:bg-ink",
@@ -25,15 +27,16 @@ export default function BookCallButton({
   label = "Book a call",
   className = "",
 }: BookCallButtonProps) {
+  const { openModal } = useBookingModal();
+
   return (
-    <a
-      href={site.bookingUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-full font-mono font-bold uppercase tracking-widest transition-colors ${variants[variant]} ${sizes[size]} ${className}`}
+    <button
+      type="button"
+      onClick={openModal}
+      className={`inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full font-mono font-bold uppercase tracking-widest transition-colors ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {label}
       <span aria-hidden="true">↗</span>
-    </a>
+    </button>
   );
 }

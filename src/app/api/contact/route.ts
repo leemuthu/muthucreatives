@@ -6,7 +6,7 @@ type ContactPayload = {
   email?: string;
   business?: string;
   projectType?: string;
-  budget?: string;
+  timeline?: string;
   message?: string;
 };
 
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  const { name, email, business, projectType, budget, message } = payload;
+  const { name, email, business, projectType, timeline, message } = payload;
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return NextResponse.json(
       { error: "Name, email, and message are required" },
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
         `Email: ${email}`,
         `Business: ${business || "n/a"}`,
         `Project type: ${projectType || "n/a"}`,
-        `Budget: ${budget || "n/a"}`,
+        `Timeline: ${timeline || "n/a"}`,
         "",
         message,
       ].join("\n"),

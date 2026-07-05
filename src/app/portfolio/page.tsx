@@ -3,7 +3,9 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CtaBanner from "@/components/CtaBanner";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import JsonLd from "@/components/JsonLd";
 import { caseStudies } from "@/lib/case-studies";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Portfolio | Web Design Case Studies",
@@ -14,9 +16,36 @@ export const metadata: Metadata = {
   },
 };
 
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Muthu Creatives Portfolio",
+  url: `${site.url}/portfolio`,
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: caseStudies.map((study, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${site.url}/portfolio/${study.slug}`,
+      name: study.name,
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+    { "@type": "ListItem", position: 2, name: "Work", item: `${site.url}/portfolio` },
+  ],
+};
+
 export default function PortfolioPage() {
   return (
     <>
+      <JsonLd data={portfolioSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <PageHero
         eyebrow="Work"
         title={

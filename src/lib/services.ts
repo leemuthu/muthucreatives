@@ -11,7 +11,8 @@ export type Service = {
   forWho: string[];
   processNotes: { name: string; description: string }[];
   timeline: string;
-  pricing: string;
+  timelineShort: string;
+  investment: string;
   faqs: { question: string; answer: string }[];
   caseStudySlugs: string[];
 };
@@ -78,7 +79,7 @@ export const services: Service[] = [
       {
         name: "Proposal",
         description:
-          "Scope, timeline and price in writing, usually within a day of the call.",
+          "Scope and timeline in writing, usually within a day of the call, plus a quote sized to your project.",
       },
       {
         name: "Build",
@@ -92,8 +93,9 @@ export const services: Service[] = [
       },
     ],
     timeline: "Most landing pages go live within a week of kickoff.",
-    pricing:
-      "Most landing pages land between $500 and $1,500, depending on scope and integrations. You'll have a fixed price in writing before anything starts.",
+    timelineShort: "Usually about a week",
+    investment:
+      "Every landing page gets a fixed quote in writing after a short discovery call, scoped to your offer and what the page needs to do. No hourly billing, no surprise invoices.",
     faqs: [
       {
         question: "Is copywriting included?",
@@ -179,7 +181,7 @@ export const services: Service[] = [
       {
         name: "Proposal",
         description:
-          "A page-by-page plan with a fixed scope, timeline and price.",
+          "A page-by-page plan with a fixed scope, timeline and quote.",
       },
       {
         name: "Build",
@@ -193,8 +195,9 @@ export const services: Service[] = [
       },
     ],
     timeline: "Most business sites take two to four weeks from kickoff to launch.",
-    pricing:
-      "Most business websites run between $1,500 and $5,000, depending on page count and integrations. Fixed price, in writing, before we start.",
+    timelineShort: "Two to four weeks",
+    investment:
+      "Priced around page count, integrations and how much content needs writing. You'll get a fixed quote in writing before we touch a single page.",
     faqs: [
       {
         question: "Will I be able to update the site myself?",
@@ -279,7 +282,7 @@ export const services: Service[] = [
       {
         name: "Proposal",
         description:
-          "Features, scope, timeline and price in writing. Including what we're deliberately leaving out of version one.",
+          "Features, scope and timeline in writing, including what we're deliberately leaving out of version one, plus a quote for that scope.",
       },
       {
         name: "Build",
@@ -293,8 +296,9 @@ export const services: Service[] = [
     ],
     timeline:
       "A focused single-view tool can ship in about a week. A full dashboard with multiple views and integrations usually takes three to six weeks.",
-    pricing:
-      "Web apps typically start around $1,500 and range past $5,000 for bigger dashboards with integrations. Every proposal is a fixed price for a defined scope.",
+    timelineShort: "One to six weeks",
+    investment:
+      "Priced around the number of views, integrations and how much logic sits behind the scenes. A simple internal tool costs a lot less than a full multi-role dashboard, and your quote reflects that.",
     faqs: [
       {
         question: "What do you build with?",
@@ -304,7 +308,7 @@ export const services: Service[] = [
       {
         question: "Can it connect to the software we already use?",
         answer:
-          "Usually. If your tools have an API or an export, there's a path. We confirm what's possible during discovery, before you've committed a dollar.",
+          "Usually. If your tools have an API or an export, there's a path. We confirm what's possible during discovery, before you've committed to anything.",
       },
       {
         question: "What if we need more features later?",
@@ -375,7 +379,7 @@ export const services: Service[] = [
       {
         name: "Proposal",
         description:
-          "Which workflows to automate, in what order, at what fixed price. With the time savings estimated up front.",
+          "Which workflows to automate and in what order, with the time savings estimated up front next to a fixed quote.",
       },
       {
         name: "Build",
@@ -390,8 +394,9 @@ export const services: Service[] = [
     ],
     timeline:
       "A single workflow often ships within days. Bigger multi-system projects usually take a week or two.",
-    pricing:
-      "Most automation projects fall between $500 and $2,500, depending on how many systems are involved. The proposal includes an estimate of hours saved, so you can do the math before spending anything.",
+    timelineShort: "Days to a couple weeks",
+    investment:
+      "Priced around how many systems and workflows are involved. Every proposal estimates the hours you'll get back, so the payback is clear before you spend anything.",
     faqs: [
       {
         question: "Which tools can you connect?",
@@ -411,10 +416,113 @@ export const services: Service[] = [
       {
         question: "How do I know it's worth it?",
         answer:
-          "The proposal estimates hours saved per week next to the price. If the automation won't pay for itself quickly, we'll tell you not to build it.",
+          "The proposal estimates hours saved per week next to the quote. If the automation won't pay for itself quickly, we'll tell you not to build it.",
       },
     ],
     caseStudySlugs: ["flowforge"],
+  },
+  {
+    slug: "seo",
+    name: "SEO",
+    shortName: "SEO",
+    tagline: "Built to rank on Google and get cited by AI answer engines.",
+    teaser:
+      "Technical SEO and content structure that helps your site show up, whether someone's searching Google or asking ChatGPT.",
+    metaTitle: "SEO & AI Search Optimization Services in Houston, TX",
+    metaDescription:
+      "SEO and generative engine optimization from Muthu Creatives in Houston. Technical fixes, structured data and content structure built for Google and AI answer engines.",
+    intro: [
+      "Most SEO work is really just removing the reasons a search engine has to ignore you. Slow pages, missing structure, thin or duplicate content, no clear answer to the question someone actually typed.",
+      "We fix the technical foundation first: fast loads, clean semantic markup, structured data, and page-level metadata that says exactly what the page is about. Then we build content structure that a search engine, and increasingly a tool like ChatGPT or Perplexity, can actually understand and quote.",
+    ],
+    included: [
+      {
+        name: "A technical audit",
+        detail:
+          "We check load speed, crawlability, structured data, mobile usability and indexing, and hand you a plain-English list of what's actually costing you visibility.",
+      },
+      {
+        name: "On-page fixes",
+        detail:
+          "Titles, meta descriptions, heading structure and internal linking, rebuilt around how people actually search for what you do.",
+      },
+      {
+        name: "Structured data",
+        detail:
+          "Schema markup for your business, services and reviews, so search engines and AI tools can read your key facts directly instead of guessing.",
+      },
+      {
+        name: "Local search setup",
+        detail:
+          "Google Business Profile alignment, consistent location and hours, and the on-page signals local rankings depend on.",
+      },
+      {
+        name: "AI answer engine readiness",
+        detail:
+          "Clear, factual, self-contained content and an llms.txt file, so tools like ChatGPT and Perplexity can find and cite your business accurately.",
+      },
+      {
+        name: "Reporting that means something",
+        detail:
+          "Rankings and traffic tracked against the specific searches that matter to your business, not vanity keywords.",
+      },
+    ],
+    forWho: [
+      "Businesses with a site that looks fine but nobody finds",
+      "Local businesses losing map-pack visibility to competitors",
+      "Anyone who wants to show up when people ask AI tools for a recommendation",
+      "Sites migrating to a new platform that can't afford to lose rankings",
+    ],
+    processNotes: [
+      {
+        name: "Discovery",
+        description:
+          "We audit your current site and figure out what's actually blocking visibility, not just what's easy to fix.",
+      },
+      {
+        name: "Proposal",
+        description:
+          "A prioritized list of fixes and a fixed quote, ordered by impact instead of billable hours.",
+      },
+      {
+        name: "Build",
+        description:
+          "Technical fixes and content structure get implemented and checked against real search results, not just a checklist.",
+      },
+      {
+        name: "Launch",
+        description:
+          "Changes go live with tracking in place, and we keep an eye on how rankings move afterward.",
+      },
+    ],
+    timeline:
+      "Technical fixes often ship within a week or two. Ranking movement takes longer since it depends on search engines re-crawling your site, usually a few weeks to a few months.",
+    timelineShort: "Fixes in weeks, rankings take longer",
+    investment:
+      "Priced around how large the site is and how much needs fixing. You'll get a fixed quote in writing after the audit, not an open-ended monthly retainer unless you want one.",
+    faqs: [
+      {
+        question: "How is this different from what you already build into every site?",
+        answer:
+          "Every site we build ships with the technical basics: fast loads, semantic structure, schema markup. SEO as a standalone service goes further, fixing an existing site's problems or pushing an already-solid site harder on rankings and AI visibility.",
+      },
+      {
+        question: "Can you guarantee a ranking?",
+        answer:
+          "No, and anyone who does is lying to you. What we can control is the technical and structural side, which is most of what's actually in your hands. What we can't control is Google's algorithm or your competitors.",
+      },
+      {
+        question: "What is GEO, and why does it matter?",
+        answer:
+          "GEO, generative engine optimization, is making sure tools like ChatGPT, Perplexity and Google AI Overviews can find, understand and cite your business. It leans on the same foundations as SEO: clear facts, structured data and content that answers real questions directly.",
+      },
+      {
+        question: "Do I need a new website for this, or can you fix my current one?",
+        answer:
+          "Most of the time we can work with what you have. If the site is built on something that fundamentally can't be fixed, like a page builder producing bloated code, we'll tell you honestly and talk through the alternative.",
+      },
+    ],
+    caseStudySlugs: ["maison-lumiere", "ember-rye"],
   },
 ];
 

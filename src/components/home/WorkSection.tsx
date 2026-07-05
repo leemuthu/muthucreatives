@@ -50,7 +50,7 @@ export default function WorkSection() {
                     <p className="font-mono text-xs uppercase tracking-widest text-mist">
                       {study.industry}
                     </p>
-                    <h3 className="type-wide mt-3 text-4xl font-black uppercase leading-none text-ink md:text-5xl">
+                    <h3 className="type-wide mt-3 break-words text-4xl font-black uppercase leading-none text-ink md:text-5xl">
                       {study.name}
                     </h3>
                     <p className="mt-4 max-w-md text-sm leading-relaxed text-mist md:text-base">

@@ -8,9 +8,9 @@ import { services } from "@/lib/services";
 import { getCaseStudiesForService } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
-  title: "Web Design & Development Services in Houston, TX",
+  title: "Web Design, Development & SEO Services in Houston, TX",
   description:
-    "Landing pages, business websites, web apps and automations, custom-built by Muthu Creatives in Houston. Fixed prices in writing, no templates, you own the code.",
+    "Landing pages, business websites, web apps, automations and SEO, custom-built by Muthu Creatives in Houston. Fixed quotes in writing, no templates, you own the code.",
   alternates: {
     canonical: "/services",
   },
@@ -27,7 +27,7 @@ export default function ServicesPage() {
             <span className="text-flare">Nothing off the shelf.</span>
           </>
         }
-        lede="We build four things: landing pages, business websites, web apps and automations. Every one designed and coded from scratch in Houston, with a fixed price in writing before work starts."
+        lede="We build five things: landing pages, business websites, web apps, automations and SEO. Every one designed and coded from scratch in Houston, with a fixed quote in writing before work starts."
       />
 
       <div className="bg-paper text-night">
@@ -51,15 +51,15 @@ export default function ServicesPage() {
                       href={`/services/${service.slug}`}
                       className="mt-6 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-flare transition-colors hover:text-night"
                     >
-                      Full details, pricing & FAQs <span aria-hidden="true">→</span>
+                      Full details & FAQs <span aria-hidden="true">→</span>
                     </Link>
                   </div>
                   <div className="flex flex-col gap-6 border-t border-hairline-paper pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">
                     <div>
                       <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-stone">
-                        Typical investment
+                        How it’s priced
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed">{service.pricing}</p>
+                      <p className="mt-2 text-sm leading-relaxed">{service.investment}</p>
                     </div>
                     <div>
                       <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-stone">

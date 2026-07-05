@@ -4,6 +4,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollProgress from "@/components/ScrollProgress";
+import BookingModalProvider from "@/components/BookingModal";
 import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
@@ -30,11 +31,11 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Muthu Creatives | Custom Websites & Web Apps That Convert | Houston, TX",
+    default: "Muthu Creatives | Websites, Web Apps, Automations & SEO | Houston, TX",
     template: "%s | Muthu Creatives",
   },
   description:
-    "Houston web design studio building custom websites, web apps and automations that convert. No templates. Founder-led by Lee Muthu, serving clients nationwide.",
+    "Houston web design agency building custom websites, web apps, automations and SEO that convert. No templates. Led hands-on by founder Lee Muthu, serving clients nationwide.",
   openGraph: {
     type: "website",
     siteName: site.name,
@@ -58,11 +59,12 @@ const businessSchema = {
   url: site.url,
   email: site.email,
   description:
-    "Web design studio building custom websites, web apps and automations for small and mid-sized businesses. Based in Houston, TX, serving clients nationwide.",
+    "Web design agency building custom websites, web apps and automations for small and mid-sized businesses. Based in Houston, TX, serving clients nationwide. Every engagement is led personally by founder Lee Muthu.",
   founder: {
     "@type": "Person",
     name: site.founder,
     jobTitle: "Founder",
+    image: `${site.url}/about/lee-muthu.jpg`,
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "University of Houston",
@@ -78,7 +80,6 @@ const businessSchema = {
     { "@type": "City", name: "Houston" },
     { "@type": "Country", name: "United States" },
   ],
-  priceRange: "$500 - $5,000+",
   sameAs: [site.social.instagram, site.social.linkedin, site.social.facebook],
   review: testimonials.map((testimonial) => ({
     "@type": "Review",
@@ -114,18 +115,20 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <JsonLd data={businessSchema} />
-        <ScrollProgress />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-50 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          }}
-        />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <BookingModalProvider>
+          <ScrollProgress />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none fixed inset-0 z-50 opacity-[0.03]"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            }}
+          />
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </BookingModalProvider>
       </body>
     </html>
   );

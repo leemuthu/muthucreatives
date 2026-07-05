@@ -1,21 +1,25 @@
 # Muthu Creatives
 
-> Muthu Creatives is a web design studio in Houston, TX, founded and led by Lee Muthu.
-> We build custom websites, web apps and automations for small and mid-sized businesses
-> across the United States. Every project is designed and coded from scratch, with no
-> templates or page builders, and priced as a fixed quote in writing before work starts.
+> Muthu Creatives is a web design agency in Houston, TX, founded and led by Lee Muthu.
+> The agency builds custom websites, web apps, automations and SEO for small and
+> mid-sized businesses across the United States. Every project is designed and coded
+> from scratch, with no templates or page builders, and priced as a fixed quote in
+> writing after a discovery call. Lee leads every engagement personally as the client's
+> point of contact from the first call through launch, working alongside the designers
+> and developers who help build each project.
 
 ## Key facts
 
-- Founder: Lee Muthu (Computer Science, University of Houston)
+- Founder and lead: Lee Muthu (Computer Science, University of Houston)
 - Location: Houston, Texas, serving clients nationwide
 - Contact: info@muthucreatives.com
-- Booking: free 20-minute intro call, linked from every page
-- Typical pricing: landing pages $500 to $1,500; business websites $1,500 to $5,000;
-  web apps from $1,500; automations $500 to $2,500. Fixed-price proposals only.
+- Booking: free 20-minute intro call, bookable directly on every page
+- Pricing: fixed quotes in writing after a free discovery call, scoped to each
+  project. No published price list and no hourly billing.
 - Typical timelines: landing pages about 1 week; business websites 2 to 4 weeks;
-  web apps 1 to 6 weeks depending on scope
-- Process: Discovery (free call), then Proposal (fixed scope and price in writing),
+  web apps 1 to 6 weeks; automations days to a couple of weeks; SEO technical
+  fixes in 1 to 2 weeks, with ranking movement taking longer
+- Process: Discovery (free call), then Proposal (fixed scope and quote in writing),
   then Build (revisions included), then Launch (client owns all code and content)
 
 ## Services
@@ -28,6 +32,8 @@
   portals, internal tools and MVPs built in React and TypeScript
 - [Automations](https://muthucreatives.com/services/automations): tool integrations
   and workflows that eliminate manual, repetitive tasks
+- [SEO](https://muthucreatives.com/services/seo): technical SEO, structured data
+  and content structure built for both Google and AI answer engines (GEO)
 
 ## Case studies
 
@@ -46,5 +52,5 @@
 
 ## Other pages
 
-- [About](https://muthucreatives.com/about): founder background and how we work
-- [Contact](https://muthucreatives.com/contact): booking calendar and project brief form
+- [About](https://muthucreatives.com/about): founder background and how the agency works
+- [Contact](https://muthucreatives.com/contact): booking and project brief form

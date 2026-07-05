@@ -3,6 +3,7 @@ const items = [
   "Business sites",
   "Web apps",
   "Automations",
+  "SEO",
 ];
 
 function TrackItems({ hidden = false }: { hidden?: boolean }) {

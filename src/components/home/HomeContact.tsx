@@ -50,7 +50,7 @@ export default function HomeContact() {
                       Talk to Lee
                     </p>
                     <p className="font-mono text-xs tracking-wide text-mist">
-                      Founder. Also the guy who builds it.
+                      Founder. Your point of contact, start to finish.
                     </p>
                   </div>
                 </div>

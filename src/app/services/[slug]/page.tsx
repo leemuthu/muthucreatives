@@ -142,9 +142,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <Reveal delay={0.1}>
               <div className="border-2 border-night bg-sand p-7">
                 <h2 className="type-wide text-2xl font-black uppercase">
-                  Investment & timeline
+                  Pricing & timeline
                 </h2>
-                <p className="mt-4 text-sm leading-relaxed">{service.pricing}</p>
+                <p className="mt-4 text-sm leading-relaxed">{service.investment}</p>
                 <p className="mt-3 text-sm leading-relaxed text-stone">
                   {service.timeline}
                 </p>

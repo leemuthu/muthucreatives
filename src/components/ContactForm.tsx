@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
+import { useBookingModal } from "@/components/BookingModal";
 
 const projectTypes = [
   "Landing page",
@@ -11,7 +12,12 @@ const projectTypes = [
   "Not sure yet",
 ];
 
-const budgetRanges = ["Under $500", "$500 to $1,500", "$1,500 to $5,000", "$5,000+"];
+const timelines = [
+  "As soon as possible",
+  "Within a month",
+  "1 to 3 months out",
+  "Just exploring for now",
+];
 
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
@@ -20,6 +26,7 @@ const inputStyles =
 
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
+  const { openModal } = useBookingModal();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -51,14 +58,13 @@ export default function ContactForm() {
           We’ll reply within one business day. Want to skip the wait? Grab a
           time on the calendar and we’ll show up prepared.
         </p>
-        <a
-          href={site.bookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={openModal}
           className="mt-5 inline-block rounded-full bg-flare px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-night transition-colors hover:bg-ink"
         >
           Book a call ↗
-        </a>
+        </button>
       </div>
     );
   }
@@ -121,11 +127,11 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="budget" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
-            Budget range
+          <label htmlFor="timeline" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
+            When do you want this live?
           </label>
-          <select id="budget" name="budget" className={inputStyles}>
-            {budgetRanges.map((range) => (
+          <select id="timeline" name="timeline" className={inputStyles}>
+            {timelines.map((range) => (
               <option key={range} value={range}>
                 {range}
               </option>

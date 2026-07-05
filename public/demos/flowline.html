@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowline — Automate Your Workflow</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0f0e0c;
+    --ink-2: #3a3830;
+    --ink-3: #7a7770;
+    --paper: #f5f2eb;
+    --paper-2: #ede9df;
+    --paper-3: #e4dfd2;
+    --accent: #c84b2f;
+    --accent-2: #e8683f;
+    --green: #2d6a4f;
+    --green-light: #d8f3dc;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --r: 6px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 2.5rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--paper-3);
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .logo-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; color: var(--ink-2);
+    font-size: 0.875rem; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--r);
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent) !important; color: var(--paper) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    padding: 8rem 2.5rem 5rem;
+    max-width: 1100px; margin: 0 auto;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--paper-2);
+    border: 1px solid var(--paper-3);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--ink-2);
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .eyebrow-dot {
+    width: 6px; height: 6px; background: var(--green);
+    border-radius: 50%; display: inline-block;
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.8); }
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.125rem;
+    color: var(--ink-2);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; align-items: center; gap: 1rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: var(--r);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.15s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--accent-2); transform: translateY(-1px); }
+  .btn-secondary {
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--accent); }
+  .btn-secondary svg { transition: transform 0.2s; }
+  .btn-secondary:hover svg { transform: translateX(3px); }
+
+  .hero-social-proof {
+    margin-top: 3.5rem;
+    display: flex; align-items: center; gap: 1.25rem;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .avatars { display: flex; }
+  .avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 2px solid var(--paper);
+    margin-right: -8px;
+    font-size: 0.7rem;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 500; color: white;
+  }
+  .av1 { background: #4a7c59; }
+  .av2 { background: #8b5e3c; }
+  .av3 { background: #4a6fa5; }
+  .av4 { background: #7b4fa5; }
+  .social-text { font-size: 0.8rem; color: var(--ink-3); line-height: 1.4; }
+  .social-text strong { color: var(--ink-2); display: block; }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    position: absolute;
+    right: -40px; top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  /* LOGOS */
+  .logos {
+    background: var(--paper-2);
+    border-top: 1px solid var(--paper-3);
+    border-bottom: 1px solid var(--paper-3);
+    padding: 2rem 2.5rem;
+    text-align: center;
+  }
+  .logos-inner {
+    max-width: 900px; margin: 0 auto;
+  }
+  .logos-label {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--ink-3);
+    margin-bottom: 1.5rem; font-weight: 500;
+  }
+  .logos-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 2.5rem; flex-wrap: wrap;
+  }
+  .logo-item {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--ink-3);
+    letter-spacing: -0.02em;
+    opacity: 0.7;
+  }
+
+  /* FEATURES */
+  .features {
+    max-width: 1100px; margin: 0 auto;
+    padding: 7rem 2.5rem;
+  }
+  .section-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 5rem;
+  }
+  .section-tag {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--accent);
+    font-weight: 500; margin-bottom: 1rem;
+  }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .section-header h2 em { font-style: italic; color: var(--accent); }
+  .section-header p {
+    color: var(--ink-2); font-size: 1rem;
+    line-height: 1.7; font-weight: 300;
+    align-self: end;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--paper-3);
+    border: 1.5px solid var(--paper-3);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .feature-card {
+    background: var(--paper);
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+  .feature-card:hover { background: var(--paper-2); }
+  .feature-icon {
+    width: 40px; height: 40px;
+    background: var(--paper-2);
+    border-radius: var(--r);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+  }
+  .feature-card h3 {
+    font-size: 1rem; font-weight: 500;
+    margin-bottom: 0.6rem; color: var(--ink);
+  }
+  .feature-card p {
+    font-size: 0.875rem; color: var(--ink-3);
+    line-height: 1.65; font-weight: 300;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--ink);
+    padding: 5rem 2.5rem;
+  }
+  .stats-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; text-align: center;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--paper);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-num span { color: var(--accent-2); }
+  .stat-label { font-size: 0.875rem; color: #6b6860; font-weight: 300; }
+
+  /* PRICING */
+  .pricing {
+    max-width: 1100px; margin: 0 auto;
+    padding: 7rem 2.5rem;
+  }
+  .pricing-header { text-align: center; margin-bottom: 4rem; }
+  .pricing-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .pricing-header p { color: var(--ink-2); font-weight: 300; }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .pricing-card {
+    background: var(--paper-2);
+    border: 1px solid var(--paper-3);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .pricing-card.featured {
+    background: var(--ink);
+    border-color: var(--ink);
+    transform: scale(1.03);
+  }
+  .plan-badge {
+    display: inline-block;
+    font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.08em; font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-card:not(.featured) .plan-badge {
+    background: var(--paper-3); color: var(--ink-2);
+  }
+  .pricing-card.featured .plan-badge {
+    background: var(--accent); color: white;
+  }
+  .plan-name {
+    font-size: 1.1rem; font-weight: 500; margin-bottom: 0.35rem;
+  }
+  .pricing-card.featured .plan-name { color: var(--paper); }
+  .plan-price {
+    font-family: var(--serif);
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+  .pricing-card:not(.featured) .plan-price { color: var(--ink); }
+  .pricing-card.featured .plan-price { color: var(--paper); }
+  .plan-price sup { font-size: 1.2rem; font-family: var(--sans); vertical-align: super; }
+  .plan-price sub { font-size: 0.9rem; font-family: var(--sans); color: var(--ink-3); }
+  .pricing-card.featured .plan-price sub { color: #6b6860; }
+  .plan-desc {
+    font-size: 0.8rem; color: var(--ink-3); margin-bottom: 1.75rem;
+    font-weight: 300;
+  }
+  .pricing-card.featured .plan-desc { color: #6b6860; }
+  .plan-features { list-style: none; margin-bottom: 2rem; }
+  .plan-features li {
+    font-size: 0.875rem; color: var(--ink-2);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--paper-3);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .pricing-card.featured .plan-features li {
+    color: #b5b2aa; border-bottom-color: #2a2924;
+  }
+  .plan-features li::before {
+    content: ''; width: 5px; height: 5px;
+    background: var(--accent); border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .plan-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--r);
+    font-size: 0.9rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s;
+    text-align: center; text-decoration: none;
+    display: block; border: none;
+  }
+  .pricing-card:not(.featured) .plan-btn {
+    background: var(--paper);
+    border: 1px solid var(--paper-3);
+    color: var(--ink);
+  }
+  .pricing-card:not(.featured) .plan-btn:hover {
+    background: var(--ink); color: var(--paper);
+  }
+  .pricing-card.featured .plan-btn {
+    background: var(--accent); color: white;
+  }
+  .pricing-card.featured .plan-btn:hover {
+    background: var(--accent-2);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 6rem 2.5rem;
+    background: var(--paper-2);
+    border-top: 1px solid var(--paper-3);
+    text-align: center;
+  }
+  .cta-inner { max-width: 600px; margin: 0 auto; }
+  .cta-inner h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .cta-inner h2 em { font-style: italic; color: var(--accent); }
+  .cta-inner p {
+    color: var(--ink-2); font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  .cta-form {
+    display: flex; gap: 0.75rem; max-width: 420px; margin: 0 auto;
+  }
+  .cta-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--paper-3);
+    border-radius: var(--r);
+    background: var(--paper);
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .cta-input:focus { border-color: var(--accent); }
+  .cta-note { font-size: 0.75rem; color: var(--ink-3); margin-top: 0.75rem; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 3rem 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    color: var(--paper);
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+  .footer-links a {
+    color: #6b6860; text-decoration: none;
+    font-size: 0.8rem; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--paper); }
+  .footer-copy { font-size: 0.75rem; color: #4a4840; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.25rem 4rem; }
+    .hero-visual { display: none; }
+    .section-header { grid-template-columns: 1fr; gap: 1rem; }
+    .features-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card.featured { transform: none; }
+    .cta-form { flex-direction: column; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-dot"></span>
+    Flowline
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#" class="nav-cta">Get started free</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section style="position:relative; overflow:hidden;">
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      Now in public beta — join 4,200+ teams
+    </div>
+    <h1>Automate the work<br>you <em>hate</em> doing</h1>
+    <p class="hero-sub">Flowline connects your tools and automates repetitive workflows — no code required. Build once, run forever.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Start for free</a>
+      <a href="#" class="btn-secondary">
+        Watch demo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-social-proof">
+      <div class="avatars">
+        <div class="avatar av1">JK</div>
+        <div class="avatar av2">MP</div>
+        <div class="avatar av3">SR</div>
+        <div class="avatar av4">TL</div>
+      </div>
+      <div class="social-text">
+        <strong>4.9 / 5 from 800+ reviews</strong>
+        Loved by ops teams at 500+ companies
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos">
+  <div class="logos-inner">
+    <p class="logos-label">Trusted by teams at</p>
+    <div class="logos-row">
+      <span class="logo-item">Meridian</span>
+      <span class="logo-item">Arcova</span>
+      <span class="logo-item">Nestly</span>
+      <span class="logo-item">Bryton Co.</span>
+      <span class="logo-item">Solveig</span>
+      <span class="logo-item">Crestfield</span>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-header">
+    <div>
+      <div class="section-tag">Features</div>
+      <h2>Everything your team<br>needs to move <em>faster</em></h2>
+    </div>
+    <p>Stop duct-taping tools together. Flowline gives you a single place to build, manage, and monitor all your automated workflows.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Visual workflow builder</h3>
+      <p>Drag-and-drop editor lets anyone build powerful automations without writing a single line of code.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔗</div>
+      <h3>200+ integrations</h3>
+      <p>Connect Slack, Notion, HubSpot, Stripe, and hundreds more. If it has an API, Flowline can talk to it.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Real-time analytics</h3>
+      <p>See every workflow run, catch failures instantly, and understand exactly where time is being saved.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Enterprise security</h3>
+      <p>SOC 2 Type II certified. SSO, audit logs, role-based access, and end-to-end encryption included.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <h3>AI-assisted building</h3>
+      <p>Describe what you want in plain English and our AI drafts the workflow for you to review and launch.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🕐</div>
+      <h3>Scheduled & triggered</h3>
+      <p>Run workflows on a schedule, on a webhook, or in response to events in any connected tool.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">12<span>h</span></div>
+      <div class="stat-label">saved per team per week on average</div>
+    </div>
+    <div>
+      <div class="stat-num">200<span>+</span></div>
+      <div class="stat-label">native integrations available</div>
+    </div>
+    <div>
+      <div class="stat-num">99<span>.9%</span></div>
+      <div class="stat-label">uptime SLA for all paid plans</div>
+    </div>
+    <div>
+      <div class="stat-num">4<span>k+</span></div>
+      <div class="stat-label">teams running workflows today</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-header">
+    <div class="section-tag">Pricing</div>
+    <h2>Simple, honest pricing</h2>
+    <p>No hidden fees. Cancel anytime. Start free, upgrade when you're ready.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <span class="plan-badge">Starter</span>
+      <div class="plan-name">Free</div>
+      <div class="plan-price"><sup>$</sup>0<sub>/mo</sub></div>
+      <div class="plan-desc">For individuals and small projects</div>
+      <ul class="plan-features">
+        <li>5 active workflows</li>
+        <li>500 runs / month</li>
+        <li>10 integrations</li>
+        <li>Community support</li>
+      </ul>
+      <a href="#" class="plan-btn">Get started free</a>
+    </div>
+    <div class="pricing-card featured">
+      <span class="plan-badge">Most popular</span>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price"><sup>$</sup>49<sub>/mo</sub></div>
+      <div class="plan-desc">For growing teams that need more power</div>
+      <ul class="plan-features">
+        <li>Unlimited workflows</li>
+        <li>50,000 runs / month</li>
+        <li>All 200+ integrations</li>
+        <li>Priority email support</li>
+        <li>Advanced analytics</li>
+        <li>Custom webhooks</li>
+      </ul>
+      <a href="#" class="plan-btn">Start 14-day trial</a>
+    </div>
+    <div class="pricing-card">
+      <span class="plan-badge">Enterprise</span>
+      <div class="plan-name">Custom</div>
+      <div class="plan-price" style="font-size:2rem; padding-top:0.4rem;">Let's talk</div>
+      <div class="plan-desc">For large teams with custom needs</div>
+      <ul class="plan-features">
+        <li>Unlimited everything</li>
+        <li>SSO & SCIM</li>
+        <li>SLA guarantee</li>
+        <li>Dedicated CSM</li>
+        <li>On-prem option</li>
+        <li>Custom contracts</li>
+      </ul>
+      <a href="#" class="plan-btn">Contact sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to reclaim your <em>time?</em></h2>
+    <p>Join thousands of teams automating the boring stuff. Free to start, no credit card required.</p>
+    <div class="cta-form">
+      <input class="cta-input" type="email" placeholder="Enter your work email">
+      <a href="#" class="btn-primary" style="white-space:nowrap;">Get started →</a>
+    </div>
+    <p class="cta-note">Free forever on the Starter plan. Upgrade anytime.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Flowline</a>
+  <ul class="footer-links">
+    <li><a href="#">Product</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 Flowline, Inc.</span>
+</footer>
+
+</body>
+</html>

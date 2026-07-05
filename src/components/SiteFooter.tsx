@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { caseStudies } from "@/lib/case-studies";
+import { useBookingModal } from "@/components/BookingModal";
 
 export default function SiteFooter() {
+  const { openModal } = useBookingModal();
   return (
     <footer className="overflow-hidden border-t border-hairline bg-night">
       <div className="mx-auto max-w-7xl px-5 py-14 md:px-10 md:py-20">
@@ -13,10 +17,11 @@ export default function SiteFooter() {
               Muthu<span className="text-flare">*</span>Creatives
             </p>
             <p className="mt-4 text-sm leading-relaxed text-mist">
-              A web design studio in Houston, TX, founded by Lee Muthu. We
-              build custom websites, web apps and automations for small and
-              mid-sized businesses across the country. Everything from
-              scratch, nothing from a template.
+              A web design agency in Houston, TX, founded by Lee Muthu, who
+              leads every engagement personally. We build custom websites,
+              web apps and automations for small and mid-sized businesses
+              across the country. Everything from scratch, nothing from a
+              template.
             </p>
             <p className="mt-4 font-mono text-xs tracking-wide text-mist">
               {site.serviceArea}
@@ -103,14 +108,13 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <a
-                  href={site.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={openModal}
                   className="text-sm text-flare transition-colors hover:text-ink"
                 >
                   Book a call ↗
-                </a>
+                </button>
               </li>
             </ul>
           </nav>

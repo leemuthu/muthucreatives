@@ -9,17 +9,17 @@ export default function Hero() {
       <HeroVisual />
       <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-32 md:px-10 md:pb-32 md:pt-44">
         <p className="hero-fade font-mono text-xs font-bold uppercase tracking-widest text-flare">
-          Web design studio · Houston, TX
+          Web design agency · Houston, TX
         </p>
         <h1 className="type-wide mt-6 font-black uppercase leading-[0.92] tracking-tight text-ink">
-          <span className="hero-slide block text-[13vw] md:text-[7.5rem]" style={{ animationDelay: "0.05s" }}>
+          <span className="hero-slide block text-[clamp(2.5rem,11vw,4.25rem)] md:text-[7.5rem]" style={{ animationDelay: "0.05s" }}>
             We build
           </span>
-          <span className="hero-slide block text-[13vw] md:text-[7.5rem]" style={{ animationDelay: "0.14s" }}>
+          <span className="hero-slide block text-[clamp(2.5rem,11vw,4.25rem)] md:text-[7.5rem]" style={{ animationDelay: "0.14s" }}>
             sites that
           </span>
           <span
-            className="hero-slide block text-[13vw] text-flare md:text-[7.5rem]"
+            className="hero-slide block text-[clamp(2.5rem,11vw,4.25rem)] text-flare md:text-[7.5rem]"
             style={{ animationDelay: "0.23s" }}
           >
             convert.
@@ -49,7 +49,7 @@ export default function Hero() {
             className="hero-fade mt-7 font-mono text-xs tracking-wide text-mist"
             style={{ animationDelay: "0.7s" }}
           >
-            Free 20-minute call. Fixed price in writing. Founder does the work.
+            Free 20-minute call. Fixed quote in writing. Lee leads every project.
           </p>
         </div>
       </div>
