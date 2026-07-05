@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       url: "/og-image.png",
       width: 1200,
       height: 630,
-      alt: "Muthu Creatives — We build sites that convert",
+      alt: "Muthu Creatives - We build sites that convert",
     },
   },
   twitter: {
