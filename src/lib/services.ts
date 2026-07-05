@@ -502,7 +502,7 @@ export const services: Service[] = [
     ],
     timeline:
       "Technical fixes often ship within a week or two. Ranking movement takes longer since it depends on search engines re-crawling your site, usually a few weeks to a few months.",
-    timelineShort: "Fixes in weeks, rankings take longer",
+    timelineShort: "Scoped after a fast audit",
     investment:
       "Priced around how large the site is and how much needs fixing. You'll get a fixed quote in writing after the audit, not an open-ended monthly retainer unless you want one.",
     faqs: [
@@ -527,7 +527,7 @@ export const services: Service[] = [
           "Most of the time we can work with what you have. If the site is built on something that fundamentally can't be fixed, like a page builder producing bloated code, we'll tell you honestly and talk through the alternative.",
       },
     ],
-    caseStudySlugs: ["maison-lumiere", "ember-rye"],
+    caseStudySlugs: ["ember-rye", "maison-lumiere"],
   },
 ];
 

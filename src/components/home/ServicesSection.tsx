@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { services } from "@/lib/services";
-import { getCaseStudiesForService } from "@/lib/case-studies";
+import { getCaseStudy } from "@/lib/case-studies";
 
 export default function ServicesSection() {
   return (
@@ -32,7 +32,7 @@ export default function ServicesSection() {
 
         <div className="mt-14">
           {services.map((service) => {
-            const proof = getCaseStudiesForService(service.slug)[0];
+            const proof = getCaseStudy(service.caseStudySlugs[0]);
             return (
               <Reveal key={service.slug}>
                 <Link
