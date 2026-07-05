@@ -10,9 +10,9 @@ import { site, processSteps } from "@/lib/site";
 import { testimonials } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
-  title: "About Lee Muthu — Founder of Muthu Creatives, Houston, TX",
+  title: "About Lee Muthu | Founder of Muthu Creatives, Houston, TX",
   description:
-    "Muthu Creatives is a founder-led web design studio in Houston, TX. Lee Muthu studied Computer Science at the University of Houston and builds every project personally.",
+    "Muthu Creatives is a founder-led web design studio in Houston. Lee Muthu studied Computer Science at the University of Houston and personally builds every project.",
   alternates: {
     canonical: "/about",
   },
@@ -61,155 +61,158 @@ export default function AboutPage() {
         eyebrow="About"
         title={
           <>
-            Built on CS. <em className="text-brass">Scaled</em> for business.
+            Built on CS. <span className="text-flare">Scaled for business.</span>
           </>
         }
-        lede="Muthu Creatives is a founder-led studio in Houston, TX. Lee Muthu designs and builds every project personally — which is exactly why clients don't get handed off, watered down, or surprised."
+        lede="Muthu Creatives is a one-founder studio in Houston. Lee designs and builds every project himself, which is exactly why clients never get handed off, watered down or surprised."
       />
 
-      <div className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28">
-        <div className="grid gap-12 lg:grid-cols-[3fr_2fr]">
-          <Reveal className="max-w-2xl space-y-5">
-            <p className="text-base leading-relaxed text-muted">
-              Lee studied Computer Science at the University of Houston — the
-              kind of background that means your site isn&apos;t assembled from
-              a template, it&apos;s engineered. Clean code, fast load times,
-              and structure that search engines actually understand aren&apos;t
-              add-ons here; they&apos;re just how the work gets done.
-            </p>
-            <p className="text-base leading-relaxed text-muted">
-              But most projects don&apos;t fail on code. They fail because
-              nobody asked the right questions before building. What should
-              this site make happen — calls, bookings, orders? Who is it for?
-              What&apos;s the one action a visitor should take? We ask those
-              questions up front, in plain English, so the thing we build is
-              the thing your business needed.
-            </p>
-            <p className="text-base leading-relaxed text-muted">
-              And we don&apos;t hand off code and disappear. You own everything
-              we build — domain, source, content — and we&apos;re available
-              after launch for whatever comes next. The goal has never been to
-              ship a website. It&apos;s to deliver work that moves the needle.
-            </p>
-          </Reveal>
+      <section className="bg-paper text-night">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24">
+          <div className="grid gap-12 lg:grid-cols-[3fr_2fr]">
+            <Reveal className="max-w-2xl space-y-5">
+              <p className="text-base leading-relaxed">
+                Lee studied Computer Science at the University of Houston. That
+                background means your site gets engineered, not assembled from
+                a theme. Clean code, fast loads and structure search engines
+                can actually read aren’t upsells here. They’re just how the
+                work gets done.
+              </p>
+              <p className="text-base leading-relaxed">
+                But here’s the thing: most projects don’t fail on code. They
+                fail because nobody asked the right questions first. What
+                should this site make happen? Calls, bookings, orders? Who’s
+                it for? What’s the one thing a visitor should do? We ask all
+                of that up front, in plain English, so the thing that gets
+                built is the thing your business needed.
+              </p>
+              <p className="text-base leading-relaxed">
+                And we don’t hand off code and vanish. You own everything:
+                domain, source, content. We stick around after launch for
+                whatever comes next. The goal was never to ship a website.
+                It’s to ship work that moves the needle.
+              </p>
+            </Reveal>
 
-          <Reveal delay={0.1}>
-            <div className="space-y-8 border border-line bg-surface p-7">
-              <figure>
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src="/about/lee-muthu.jpg"
-                    alt="Lee Muthu, founder of Muthu Creatives, in Houston, TX"
-                    fill
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    className="object-cover"
-                  />
+            <Reveal delay={0.1}>
+              <div className="space-y-8 border-2 border-night bg-sand p-7">
+                <figure>
+                  <div className="relative aspect-square overflow-hidden border-2 border-night">
+                    <Image
+                      src="/about/lee-muthu.jpg"
+                      alt="Lee Muthu, founder of Muthu Creatives, in Houston, TX"
+                      fill
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-3 font-mono text-xs uppercase tracking-widest text-stone">
+                    Lee Muthu. Founder, designer, developer.
+                  </figcaption>
+                </figure>
+                <div>
+                  <h2 className="font-mono text-xs font-bold uppercase tracking-widest text-stone">
+                    Studio facts
+                  </h2>
+                  <dl className="mt-4 space-y-3 text-sm">
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-stone">Founder</dt>
+                      <dd className="font-bold">{site.founder}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-stone">Based in</dt>
+                      <dd className="font-bold">Houston, TX</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-stone">Serving</dt>
+                      <dd className="font-bold">Clients nationwide</dd>
+                    </div>
+                    <div className="flex justify-between gap-4">
+                      <dt className="text-stone">Education</dt>
+                      <dd className="text-right font-bold">
+                        Computer Science, University of Houston
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
-                <figcaption className="mt-3 font-mono text-xs tracking-wide text-muted">
-                  Lee Muthu — founder, designer, developer
-                </figcaption>
-              </figure>
-              <div>
-                <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-                  Studio facts
-                </h2>
-                <dl className="mt-4 space-y-3 text-sm">
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted">Founder</dt>
-                    <dd className="text-ink">{site.founder}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted">Based in</dt>
-                    <dd className="text-ink">Houston, TX</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted">Serving</dt>
-                    <dd className="text-ink">Clients nationwide</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-muted">Education</dt>
-                    <dd className="text-right text-ink">
-                      Computer Science, University of Houston
-                    </dd>
-                  </div>
-                </dl>
+                <div>
+                  <h2 className="font-mono text-xs font-bold uppercase tracking-widest text-stone">
+                    Tools of the trade
+                  </h2>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {stack.map((tech) => (
+                      <li
+                        key={tech}
+                        className="border border-night/30 px-3 py-1 font-mono text-xs"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div>
-                <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-                  Tools of the trade
-                </h2>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {stack.map((tech) => (
-                    <li
-                      key={tech}
-                      className="border border-line px-3 py-1 font-mono text-xs text-muted"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
+      </section>
 
-        <section aria-labelledby="about-process-heading" className="mt-20">
+      <section aria-labelledby="about-process-heading" className="bg-night">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24">
           <Reveal>
             <h2
               id="about-process-heading"
-              className="font-display text-3xl text-ink md:text-4xl"
+              className="type-wide text-4xl font-black uppercase leading-none text-ink md:text-5xl"
             >
               How we work
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
-              The same four steps on every project, whether it&apos;s a
-              one-page launch or a full web app.{" "}
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-mist">
+              The same four steps on every project, whether it’s a one-page
+              launch or a full web app.{" "}
               <Link
                 href="/services"
-                className="text-brass underline decoration-line underline-offset-4 hover:text-ink"
+                className="text-flare underline decoration-hairline underline-offset-4 hover:text-ink"
               >
                 See what we build →
               </Link>
             </p>
           </Reveal>
-          <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, index) => (
               <li key={step.name}>
-                <Reveal
-                  delay={index * 0.06}
-                  className="flex h-full flex-col gap-3 border-t border-brass/40 pt-5"
-                >
-                  <span className="font-mono text-xs tracking-widest text-brass">
-                    {String(index + 1).padStart(2, "0")}
+                <Reveal delay={index * 0.06} className="flex h-full flex-col">
+                  <span
+                    aria-hidden="true"
+                    className="type-narrow text-7xl font-black leading-none text-ink/15"
+                  >
+                    {index + 1}
                   </span>
-                  <h3 className="font-display text-xl text-ink">{step.name}</h3>
-                  <p className="text-sm leading-relaxed text-muted">
+                  <h3 className="type-wide mt-3 border-t-2 border-flare pt-3 text-lg font-black uppercase text-ink">
+                    {step.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-mist">
                     {step.description}
                   </p>
                 </Reveal>
               </li>
             ))}
           </ol>
-        </section>
 
-        <section aria-labelledby="about-testimonials-heading" className="mt-20">
-          <Reveal>
-            <h2
-              id="about-testimonials-heading"
-              className="font-display text-3xl text-ink md:text-4xl"
-            >
-              From the people who&apos;ve hired us
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <Reveal key={testimonial.author} delay={index * 0.08} className="h-full">
-                <TestimonialCard testimonial={testimonial} />
-              </Reveal>
-            ))}
+          <div className="mt-20">
+            <Reveal>
+              <h2 className="type-wide text-4xl font-black uppercase leading-none text-ink md:text-5xl">
+                From people who’ve hired us
+              </h2>
+            </Reveal>
+            <div className="mt-10 grid gap-px border border-hairline bg-hairline md:grid-cols-3">
+              {testimonials.map((testimonial, index) => (
+                <Reveal key={testimonial.author} delay={index * 0.08} className="h-full">
+                  <TestimonialCard testimonial={testimonial} />
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <CtaBanner
         title="Talk to the person who'll actually build it."

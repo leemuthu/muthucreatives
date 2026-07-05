@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-import {
-  IBM_Plex_Mono,
-  Instrument_Sans,
-  Instrument_Serif,
-} from "next/font/google";
+import { Archivo, Newsreader, Space_Mono } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -13,33 +9,32 @@ import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { testimonials } from "@/lib/testimonials";
 
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  display: "optional",
+  axes: ["wdth"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  style: "italic",
 });
 
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Muthu Creatives — Custom Websites & Web Apps | Houston, TX",
+    default: "Muthu Creatives | Custom Websites & Web Apps That Convert | Houston, TX",
     template: "%s | Muthu Creatives",
   },
   description:
-    "Houston web design studio building custom websites, web apps, and automations that convert — no templates. Founder-led by Lee Muthu, serving clients nationwide.",
+    "Houston web design studio building custom websites, web apps and automations that convert. No templates. Founder-led by Lee Muthu, serving clients nationwide.",
   openGraph: {
     type: "website",
     siteName: site.name,
@@ -63,7 +58,7 @@ const businessSchema = {
   url: site.url,
   email: site.email,
   description:
-    "Web design studio building custom websites, web apps, and automations for small and mid-sized businesses. Based in Houston, TX, serving clients nationwide.",
+    "Web design studio building custom websites, web apps and automations for small and mid-sized businesses. Based in Houston, TX, serving clients nationwide.",
   founder: {
     "@type": "Person",
     name: site.founder,
@@ -115,14 +110,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${plexMono.variable} h-full`}
+      className={`${archivo.variable} ${newsreader.variable} ${spaceMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
         <JsonLd data={businessSchema} />
         <ScrollProgress />
         <div
           aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-50 opacity-[0.035]"
+          className="pointer-events-none fixed inset-0 z-50 opacity-[0.03]"
           style={{
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E\")",

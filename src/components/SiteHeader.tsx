@@ -28,26 +28,26 @@ export default function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
         scrolled || menuOpen
-          ? "border-line bg-night/90 backdrop-blur-md"
+          ? "border-hairline bg-night/90 backdrop-blur-md"
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-18 md:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-10">
         <Link
           href="/"
-          className="font-display text-xl tracking-tight text-ink"
-          aria-label="Muthu Creatives — home"
+          className="type-wide text-sm font-black uppercase tracking-tight text-ink"
+          aria-label="Muthu Creatives, back to homepage"
         >
-          Muthu <span className="italic text-brass">Creatives</span>
+          Muthu<span className="text-flare">*</span>Creatives
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm transition-colors hover:text-ink ${
-                pathname.startsWith(link.href) ? "text-ink" : "text-muted"
+              className={`font-mono text-xs uppercase tracking-widest transition-colors hover:text-ink ${
+                pathname.startsWith(link.href) ? "text-ink" : "text-mist"
               }`}
             >
               {link.label}
@@ -57,7 +57,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
-          <BookCallButton size="sm" label="Book a call" />
+          <BookCallButton size="sm" />
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
@@ -68,14 +68,14 @@ export default function SiteHeader() {
             <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
             <span
               aria-hidden="true"
-              className={`h-px w-5 bg-current transition-transform ${
-                menuOpen ? "translate-y-[3.5px] rotate-45" : ""
+              className={`h-0.5 w-5 bg-current transition-transform ${
+                menuOpen ? "translate-y-1 rotate-45" : ""
               }`}
             />
             <span
               aria-hidden="true"
-              className={`h-px w-5 bg-current transition-transform ${
-                menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
+              className={`h-0.5 w-5 bg-current transition-transform ${
+                menuOpen ? "-translate-y-1 -rotate-45" : ""
               }`}
             />
           </button>
@@ -86,14 +86,14 @@ export default function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Main"
-          className="border-t border-line bg-night/95 px-5 py-4 backdrop-blur-md md:hidden"
+          className="border-t border-hairline bg-night/95 px-5 py-4 backdrop-blur-md md:hidden"
         >
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="block py-2.5 text-base text-ink"
+                  className="type-wide block py-3 text-2xl font-black uppercase text-ink"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}

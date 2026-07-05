@@ -49,9 +49,9 @@ export async function POST(request: Request) {
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
-        `Business: ${business || "—"}`,
-        `Project type: ${projectType || "—"}`,
-        `Budget: ${budget || "—"}`,
+        `Business: ${business || "n/a"}`,
+        `Project type: ${projectType || "n/a"}`,
+        `Budget: ${budget || "n/a"}`,
         "",
         message,
       ].join("\n"),

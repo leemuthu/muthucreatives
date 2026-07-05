@@ -7,45 +7,51 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <HeroVisual />
-      <div className="relative mx-auto max-w-6xl px-5 pb-28 pt-36 md:px-8 md:pb-40 md:pt-52">
-        <p className="hero-enter font-mono text-xs uppercase tracking-widest text-brass">
+      <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-32 md:px-10 md:pb-32 md:pt-44">
+        <p className="hero-fade font-mono text-xs font-bold uppercase tracking-widest text-flare">
           Web design studio · Houston, TX
         </p>
-        <h1
-          className="hero-enter-slide mt-5 max-w-4xl font-display text-6xl leading-[1.02] text-ink md:text-8xl"
-          style={{ animationDelay: "0.08s" }}
-        >
-          We build sites that{" "}
-          <em className="hero-underline relative text-brass">convert</em>.
-        </h1>
-        <p
-          className="hero-enter-slide mt-7 max-w-xl text-lg leading-relaxed text-muted md:text-xl"
-          style={{ animationDelay: "0.16s" }}
-        >
-          Custom websites, web apps, and automations for businesses serious
-          about growth. Designed and coded from scratch around your customers —
-          no templates, ever.
-        </p>
-        <div
-          className="hero-enter mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
-          style={{ animationDelay: "0.34s" }}
-        >
-          <Magnetic>
-            <BookCallButton size="lg" />
-          </Magnetic>
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 px-2 py-3 text-sm text-ink transition-colors hover:text-brass"
+        <h1 className="type-wide mt-6 font-black uppercase leading-[0.92] tracking-tight text-ink">
+          <span className="hero-slide block text-[13vw] md:text-[7.5rem]" style={{ animationDelay: "0.05s" }}>
+            We build
+          </span>
+          <span className="hero-slide block text-[13vw] md:text-[7.5rem]" style={{ animationDelay: "0.14s" }}>
+            sites that
+          </span>
+          <span
+            className="hero-slide block text-[13vw] text-flare md:text-[7.5rem]"
+            style={{ animationDelay: "0.23s" }}
           >
-            See our work <span aria-hidden="true">→</span>
-          </Link>
+            convert.
+          </span>
+        </h1>
+        <div className="mt-10 max-w-md md:ml-1">
+          <p className="hero-slide text-lg leading-relaxed text-mist" style={{ animationDelay: "0.3s" }}>
+            Custom websites, web apps and automations for businesses that want
+            their site doing real work. Everything coded from scratch. Nothing
+            from a template.
+          </p>
+          <div
+            className="hero-fade mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
+            style={{ animationDelay: "0.55s" }}
+          >
+            <Magnetic>
+              <BookCallButton size="lg" />
+            </Magnetic>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 px-1 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:text-flare"
+            >
+              See the work <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+          <p
+            className="hero-fade mt-7 font-mono text-xs tracking-wide text-mist"
+            style={{ animationDelay: "0.7s" }}
+          >
+            Free 20-minute call. Fixed price in writing. Founder does the work.
+          </p>
         </div>
-        <p
-          className="hero-enter mt-9 font-mono text-xs tracking-wide text-muted"
-          style={{ animationDelay: "0.46s" }}
-        >
-          Free 20-minute intro call · Fixed-price proposals · Founder-led builds
-        </p>
       </div>
     </section>
   );

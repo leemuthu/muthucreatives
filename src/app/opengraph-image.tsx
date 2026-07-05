@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Muthu Creatives — custom websites, web apps, and automations. Houston, TX.";
+  "Muthu Creatives. Custom websites, web apps and automations. Houston, TX.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -17,21 +17,37 @@ export default function OpenGraphImage() {
           justifyContent: "space-between",
           padding: 80,
           backgroundColor: "#131313",
-          backgroundImage:
-            "radial-gradient(ellipse 60% 50% at 75% 70%, rgba(201,168,112,0.18), transparent 70%)",
-          color: "#ece8df",
-          fontSize: 32,
+          color: "#f2eee5",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, color: "#c9a870", letterSpacing: 4 }}>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 26,
+            fontWeight: 700,
+            letterSpacing: 6,
+            color: "#f14e14",
+          }}
+        >
           MUTHU CREATIVES · HOUSTON, TX
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <div style={{ display: "flex", fontSize: 84, lineHeight: 1.05 }}>
-            We build sites that convert.
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <div style={{ display: "flex", fontSize: 96, fontWeight: 800, lineHeight: 1 }}>
+            WE BUILD SITES
           </div>
-          <div style={{ display: "flex", fontSize: 30, color: "#a39b8d" }}>
-            Custom websites, web apps, and automations — no templates.
+          <div
+            style={{
+              display: "flex",
+              fontSize: 96,
+              fontWeight: 800,
+              lineHeight: 1,
+              color: "#f14e14",
+            }}
+          >
+            THAT CONVERT.
+          </div>
+          <div style={{ display: "flex", marginTop: 28, fontSize: 30, color: "#928d83" }}>
+            Custom websites, web apps and automations. No templates.
           </div>
         </div>
       </div>

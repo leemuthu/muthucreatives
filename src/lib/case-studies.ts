@@ -12,7 +12,7 @@ export type CaseStudy = {
   stats: { value: string; label: string }[];
   quote?: { text: string; author: string; role: string };
   stack: string[];
-  cover: { from: string; to: string };
+  accent: string;
   image: string;
   imageAlt: string;
   featured: boolean;
@@ -25,43 +25,43 @@ export const caseStudies: CaseStudy[] = [
     industry: "SaaS · Workflow automation",
     serviceSlug: "landing-pages",
     summary:
-      "A conversion-focused landing page for a workflow automation SaaS — technical product, plain-English pitch, one CTA.",
-    metaTitle: "Flowline — SaaS Landing Page Case Study",
+      "A landing page for a workflow automation SaaS. Technical product, plain-English pitch, one call to action.",
+    metaTitle: "Flowline: SaaS Landing Page Case Study",
     metaDescription:
-      "How Muthu Creatives built a high-converting SaaS landing page for Flowline in 48 hours — plain-English positioning, single CTA, sub-second load.",
+      "How Muthu Creatives built and shipped a converting SaaS landing page for Flowline in 48 hours, with one CTA and sub-second load times.",
     challenge: [
-      "Flowline automates operational workflows — a genuinely useful product that's hard to explain in a sentence. Paid traffic was landing on a feature-list homepage, skimming, and bouncing before understanding what the product actually did for them.",
-      "The brief: one page that makes a cold visitor understand the product in ten seconds and start a trial in under a minute — on a tight launch deadline ahead of a campaign.",
+      "Flowline automates operational workflows. Genuinely useful product, hard to explain in one sentence. Paid traffic was landing on a homepage full of feature lists, skimming for a few seconds, and leaving before understanding what the product would do for them.",
+      "The brief was blunt: one page that makes a cold visitor get it in ten seconds and start a trial in under a minute. And the ad campaign was already scheduled, so the deadline was measured in hours.",
     ],
     approach: [
       {
-        name: "Lead with the pain, not the platform",
+        name: "Lead with the pain",
         detail:
-          "The hero names the problem — hours lost to manual busywork — before it names a single feature. Features appear later, each framed as the answer to a specific operational headache.",
+          "The hero names the problem first: hours lost to manual busywork. Features show up later, each one framed as the fix for a specific headache.",
       },
       {
         name: "One CTA, repeated",
         detail:
-          "'Start free trial' is the only action on the page. It appears in the nav, after the hero, after social proof, and at the close — no competing links to leak clicks.",
+          "Start free trial. That's the only action on the page. It shows up in the nav, after the hero, after the social proof, and at the close. Nothing else competes for the click.",
       },
       {
-        name: "Proof where doubt peaks",
+        name: "Proof right where doubt peaks",
         detail:
-          "Customer logos and usage numbers sit directly before the pricing section, where hesitation is highest.",
+          "Customer logos and usage numbers sit directly above pricing, because that's the moment visitors hesitate.",
       },
       {
-        name: "Built for the ad campaign, not just the brand",
+        name: "Built for paid traffic",
         detail:
-          "Hand-coded and lightweight, so paid-traffic visitors on mid-tier phones see the page instantly instead of a spinner they paid for per click.",
+          "Hand-coded and tiny. Visitors clicking a paid ad on a mid-tier phone see the page instantly instead of a spinner someone paid for.",
       },
     ],
     outcome: [
-      "The page was designed, built, and live in 48 hours — in time for the campaign. Every section maps to a step in the visitor's decision, and page weight stayed low enough for sub-second loads on 4G.",
+      "Designed, built and live in 48 hours, in time for the campaign. Every section maps to a step in the visitor's decision, and the page stays light enough to load in under a second on 4G.",
     ],
     stats: [
       { value: "48 hrs", label: "from kickoff to live" },
       { value: "1 CTA", label: "single conversion goal" },
-      { value: "<1s", label: "largest contentful paint" },
+      { value: "<1s", label: "load time on 4G" },
     ],
     quote: {
       text: "Turned it around in 48 hours and it looked better than sites we've paid ten times more for.",
@@ -69,9 +69,10 @@ export const caseStudies: CaseStudy[] = [
       role: "Marketing Director, SaaS",
     },
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#1c2733", to: "#131313" },
+    accent: "#5B8DB8",
     image: "/work/flowline.png",
-    imageAlt: "Flowline SaaS landing page hero built by Muthu Creatives — bold serif headline, single call to action, and social proof",
+    imageAlt:
+      "Flowline SaaS landing page hero built by Muthu Creatives, with a bold serif headline, a single call to action and review proof",
     featured: true,
   },
   {
@@ -80,48 +81,49 @@ export const caseStudies: CaseStudy[] = [
     industry: "Salon · Local business",
     serviceSlug: "business-websites",
     summary:
-      "An elegant multi-page site for a salon that needed its web presence to match its chairs — and take bookings while it sleeps.",
-    metaTitle: "Maison Lumière — Salon Website Case Study",
+      "A salon site elegant enough to match the chairs, and smart enough to take bookings at 2am.",
+    metaTitle: "Maison Lumière: Salon Website Case Study",
     metaDescription:
-      "How Muthu Creatives rebuilt a salon's web presence — booking-first structure, mobile-first design, and local SEO foundations that match how clients actually search.",
+      "How Muthu Creatives rebuilt a salon website around bookings: two taps from any page to an appointment, services Google can read, and a mobile-first design.",
     challenge: [
-      "Maison Lumière runs a premium salon experience, but its old website said otherwise: a dated template, services buried in a PDF price list, and no way to book without calling during business hours.",
-      "Salon clients search on their phones, usually at night, usually ready to book right then. Every after-hours visitor who couldn't book was a client for whichever competitor let them.",
+      "Maison Lumière runs a premium salon experience. Their old website disagreed. Dated template, services trapped in a PDF price list, and no way to book without calling during business hours.",
+      "Salon clients search at night, on their phones, ready to book right then. Every after-hours visitor who couldn't book became a client of whichever competitor let them.",
     ],
     approach: [
       {
-        name: "Booking-first architecture",
+        name: "Booking first, everything else second",
         detail:
-          "A 'Book now' action lives in the sticky header and closes every page. The path from any page to a confirmed appointment is never more than two taps.",
+          "A book-now action lives in the sticky header and closes every page. From anywhere on the site, a confirmed appointment is two taps away.",
       },
       {
         name: "A services menu that sells",
         detail:
-          "The PDF price list became structured, indexable pages — each service with its description, duration, and price, findable by search engines and skimmable on a phone.",
+          "The PDF price list became real pages. Each service has its description, duration and price, readable by search engines and skimmable on a phone.",
       },
       {
         name: "Design that matches the room",
         detail:
-          "Warm palette, generous whitespace, and typography that carries the same calm the salon does. Premium clients judge the chair by the website.",
+          "Warm palette, generous space, calm typography. Premium clients judge the chair by the website before they ever sit in it.",
       },
       {
         name: "Local search foundations",
         detail:
-          "Local business schema, location and hours consistent with the Google Business Profile, and page titles matched to how people actually search for salon services.",
+          "Structured data, consistent hours and location, and page titles that match how people actually search for salon services.",
       },
     ],
     outcome: [
-      "The salon went from a phone-only booking flow to a site that takes appointments around the clock, with a services menu search engines can finally read. Mobile experience — where nearly all salon traffic lives — became the design's center of gravity instead of an afterthought.",
+      "The salon went from phone-only booking to taking appointments around the clock, with a services menu Google can finally read. And since nearly all salon traffic is mobile, the phone experience became the main event instead of an afterthought.",
     ],
     stats: [
-      { value: "24/7", label: "booking, up from phone-hours only" },
-      { value: "2 taps", label: "from any page to booking" },
-      { value: "100%", label: "of services indexable, up from a PDF" },
+      { value: "24/7", label: "booking, up from phone hours" },
+      { value: "2 taps", label: "from any page to booked" },
+      { value: "100%", label: "of services indexable" },
     ],
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#2e2420", to: "#131313" },
+    accent: "#B8926A",
     image: "/work/maison-lumiere.png",
-    imageAlt: "Maison Lumière salon website built by Muthu Creatives — elegant serif hero with booking call to action beside salon photography",
+    imageAlt:
+      "Maison Lumière salon website built by Muthu Creatives, with an elegant serif hero and booking call to action next to salon photography",
     featured: true,
   },
   {
@@ -130,48 +132,49 @@ export const caseStudies: CaseStudy[] = [
     industry: "Restaurant · Local business",
     serviceSlug: "business-websites",
     summary:
-      "A restaurant site built around the two things diners actually do online: read the menu and book a table.",
-    metaTitle: "Ember & Rye — Restaurant Website Case Study",
+      "A restaurant site built around the only two things diners do online: read the menu, book a table.",
+    metaTitle: "Ember & Rye: Restaurant Website Case Study",
     metaDescription:
-      "How Muthu Creatives built a restaurant website around menus and reservations — indexable HTML menu, one-tap booking, and structured data for local search.",
+      "How Muthu Creatives rebuilt a restaurant website around menus and reservations, with an indexable HTML menu and one-tap booking.",
     challenge: [
-      "Ember & Rye had the food and the room, but online it had a slow template site with the menu trapped in a PDF scan — invisible to Google, painful to pinch-zoom on a phone.",
-      "Restaurant visitors want exactly two things: what's on the menu, and how to get a table. The old site made both harder than calling.",
+      "Ember & Rye had the food and the room. Online, they had a slow template site with the menu scanned into a PDF. Invisible to Google, miserable to pinch-zoom on a phone.",
+      "People visiting a restaurant website want two things: what's on the menu and how to get a table. The old site made both harder than just calling.",
     ],
     approach: [
       {
-        name: "The menu as real HTML",
+        name: "The menu as real text",
         detail:
-          "Every dish, description, and price became structured, indexable text. When someone searches a dish or cuisine nearby, the menu itself can now rank.",
+          "Every dish, description and price became actual HTML. When someone nearby searches for a dish or a cuisine, the menu itself can rank.",
       },
       {
-        name: "Reservations one tap away",
+        name: "A table, one tap away",
         detail:
-          "A persistent 'Reserve a table' action in the header and after every section, linked straight into the booking platform — no phone tag.",
+          "Reserve a table sits in the header and after every section, linked straight into the booking platform. No phone tag.",
       },
       {
-        name: "Photography does the selling",
+        name: "Let the photography sell",
         detail:
-          "The design stays dark and quiet so the food photography carries the atmosphere. Images are compressed and lazy-loaded, so the mood doesn't cost the load time.",
+          "The design stays dark and quiet so the food does the talking. Images are compressed and lazy-loaded, so the mood costs nothing in load time.",
       },
       {
         name: "Structured data for local search",
         detail:
-          "Restaurant schema with hours, cuisine, price range, and location — the details that feed map results and AI answers when someone asks what's good nearby.",
+          "Hours, cuisine, price range and location marked up properly. That's what feeds map results and the answers AI tools give when someone asks what's good nearby.",
       },
     ],
     outcome: [
-      "Diners now get the menu as fast, readable text on any phone, and a table is one tap from every page. Search engines finally see the restaurant's actual offering instead of a PDF blob.",
+      "Diners get the menu as fast, readable text on any phone, and a table is one tap from every page. Google finally sees the restaurant's actual offering instead of a scanned PDF.",
     ],
     stats: [
       { value: "1 tap", label: "from any page to a reservation" },
-      { value: "0 PDFs", label: "menu is fully indexable HTML" },
+      { value: "0 PDFs", label: "the menu is real HTML" },
       { value: "<1s", label: "mobile load on 4G" },
     ],
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#33241c", to: "#131313" },
+    accent: "#C96F3B",
     image: "/work/ember-rye.png",
-    imageAlt: "Ember & Rye restaurant website built by Muthu Creatives — dark photography-led hero with reservation call to action",
+    imageAlt:
+      "Ember & Rye restaurant website built by Muthu Creatives, with a dark photography-led hero and a reservation call to action",
     featured: true,
   },
   {
@@ -180,48 +183,49 @@ export const caseStudies: CaseStudy[] = [
     industry: "SaaS · Analytics dashboard",
     serviceSlug: "web-apps",
     summary:
-      "A React analytics dashboard that replaced a weekly ritual of spreadsheet exports with live, role-based views.",
-    metaTitle: "Apex Analytics — Dashboard Web App Case Study",
+      "A React dashboard that killed the weekly spreadsheet ritual and replaced it with live, role-based views.",
+    metaTitle: "Apex Analytics: Dashboard Web App Case Study",
     metaDescription:
-      "How Muthu Creatives built a custom React analytics dashboard — live data views, role-based access, and REST API integration replacing manual spreadsheet reports.",
+      "How Muthu Creatives built a custom React analytics dashboard with live data and role-based views, replacing manual weekly spreadsheet reports.",
     challenge: [
-      "The team behind Apex Analytics was assembling its weekly reporting by hand: exports from three systems, pasted into spreadsheets, screenshotted into slide decks. The data existed; seeing it was the job.",
-      "They needed a live dashboard their whole team could check daily — without a data engineering hire or a six-figure BI platform.",
+      "The team behind Apex Analytics assembled their weekly reporting by hand. Exports from three systems, pasted into spreadsheets, screenshotted into slide decks. The data existed. Seeing it was somebody's part-time job.",
+      "They needed one live dashboard the whole team could check daily, without hiring a data engineer or paying for a six-figure BI platform.",
     ],
     approach: [
       {
-        name: "Design from the questions backward",
+        name: "Start from the questions",
         detail:
-          "We started from the questions the team asked every week — not from the data schema — and designed one view per question.",
+          "We listed the questions the team asked every week and designed one view per question. The data schema came second.",
       },
       {
-        name: "Live data over exports",
+        name: "Live data, not exports",
         detail:
-          "REST API integrations pull from the source systems on load, so the dashboard shows now, not last Friday's export.",
+          "REST integrations pull straight from the source systems, so the dashboard shows right now, not last Friday.",
       },
       {
-        name: "Role-based views",
+        name: "Each role gets its own front door",
         detail:
-          "Leadership sees trends and summaries; operators see queues and detail. Same data, each role gets its own front door.",
+          "Leadership sees trends and summaries. Operators see queues and detail. Same data underneath.",
       },
       {
-        name: "Ship the core, then extend",
+        name: "Ship the core, then grow",
         detail:
-          "Version one shipped with the three views that mattered most. The architecture — and the delivered source code — made later additions straightforward.",
+          "Version one launched with the three views that mattered most. The delivered source code makes adding the rest straightforward.",
       },
     ],
     outcome: [
-      "The weekly spreadsheet ritual is gone. Reporting that consumed hours of manual assembly became a URL the whole team checks in seconds, with numbers that are current instead of days old.",
+      "The weekly spreadsheet ritual is gone. Reporting that used to eat hours of manual assembly is now a URL the whole team checks in seconds, with numbers that are current instead of five days old.",
     ],
     stats: [
-      { value: "3 systems", label: "unified into one live dashboard" },
-      { value: "0 exports", label: "manual weekly reports eliminated" },
-      { value: "100%", label: "source code delivered to the client" },
+      { value: "3 systems", label: "unified in one dashboard" },
+      { value: "0 exports", label: "weekly manual reports left" },
+      { value: "100%", label: "source code handed over" },
     ],
     stack: ["React", "TypeScript", "REST APIs", "Tailwind CSS"],
-    cover: { from: "#1e2a26", to: "#131313" },
+    accent: "#4FA98C",
     image: "/work/apex-analytics.png",
-    imageAlt: "Apex Analytics dashboard built by Muthu Creatives — live revenue charts, traffic sources, and transaction feed in a dark UI",
+    imageAlt:
+      "Apex Analytics dashboard built by Muthu Creatives, showing live revenue charts, traffic sources and a transaction feed in a dark interface",
     featured: false,
   },
   {
@@ -230,43 +234,43 @@ export const caseStudies: CaseStudy[] = [
     industry: "Operations · Automation tooling",
     serviceSlug: "web-apps",
     summary:
-      "A visual workflow builder that lets a non-technical operations team automate processes without writing code.",
-    metaTitle: "FlowForge — Workflow Builder Web App Case Study",
+      "A visual workflow builder that lets a non-technical ops team automate their own processes. No code, no waiting on developers.",
+    metaTitle: "FlowForge: Workflow Builder Web App Case Study",
     metaDescription:
-      "How Muthu Creatives built FlowForge, a visual workflow automation builder — drag-and-drop canvas, run history, and error alerts for a non-technical ops team.",
+      "How Muthu Creatives built FlowForge, a drag-and-drop workflow automation builder with run history and loud error alerts for a non-technical ops team.",
     challenge: [
-      "An operations team was automating processes the fragile way: scripts only one person understood, spreadsheets glued together with hope, and hours of daily copy-paste where the glue didn't hold.",
-      "They didn't need another script. They needed a tool that let the team see, build, and fix its own workflows — without a developer in the loop for every change.",
+      "An operations team was automating things the fragile way. Scripts only one person understood, spreadsheets glued together with hope, and hours of daily copy-paste wherever the glue didn't hold.",
+      "They didn't need another script. They needed a tool that let the people who know the process automate the process, without a developer in the loop for every change.",
     ],
     approach: [
       {
         name: "A canvas instead of code",
         detail:
-          "Drag-and-drop workflow building with plain-language steps — triggers, conditions, actions — so the people who know the process can automate the process.",
+          "Drag-and-drop workflow building with plain-language steps. Triggers, conditions, actions. If you can describe the process, you can build it.",
       },
       {
-        name: "Every run visible",
+        name: "Every run on the record",
         detail:
-          "A run history shows each workflow execution with its inputs and outcome, so 'did it work?' is a glance, not an investigation.",
+          "A run history shows each execution with its inputs and outcome. Did it work becomes a glance, not an investigation.",
       },
       {
         name: "Failures that announce themselves",
         detail:
-          "When a step fails, the team gets alerted with the exact step and reason — no more silent breakage discovered a week later in bad data.",
+          "When a step fails, the team gets told which step and why, immediately. No more silent breakage surfacing weeks later in bad data.",
       },
       {
-        name: "Guardrails for non-developers",
+        name: "Safe for non-developers",
         detail:
-          "Test mode runs workflows against sample data before they touch live systems, making the tool safe to hand to the whole team.",
+          "Test mode runs any workflow against sample data before it touches live systems. The whole team can experiment without fear.",
       },
     ],
     outcome: [
-      "The team automated its own daily busywork — the repetitive data movement that used to eat the morning now runs itself, with failures surfacing immediately instead of silently.",
+      "The team automated its own morning busywork. The repetitive data-moving that used to eat the first hours of every day now runs itself, and when something breaks, they know before it matters.",
     ],
     stats: [
-      { value: "3 hrs/day", label: "of manual work eliminated" },
-      { value: "0 code", label: "needed to build a new workflow" },
-      { value: "100%", label: "of runs logged and inspectable" },
+      { value: "3 hrs/day", label: "of manual work gone" },
+      { value: "0 code", label: "needed for a new workflow" },
+      { value: "100%", label: "of runs logged" },
     ],
     quote: {
       text: "The automation saves our team 3 hours every day.",
@@ -274,9 +278,10 @@ export const caseStudies: CaseStudy[] = [
       role: "Operations Manager, Ecommerce",
     },
     stack: ["React", "TypeScript", "REST APIs", "Tailwind CSS"],
-    cover: { from: "#292331", to: "#131313" },
+    accent: "#8B7BB8",
     image: "/work/flowforge.png",
-    imageAlt: "FlowForge visual workflow builder built by Muthu Creatives — drag-and-drop automation canvas with run history",
+    imageAlt:
+      "FlowForge visual workflow builder built by Muthu Creatives, showing a drag-and-drop automation canvas with run history",
     featured: false,
   },
   {
@@ -285,48 +290,49 @@ export const caseStudies: CaseStudy[] = [
     industry: "Creator · Personal brand",
     serviceSlug: "landing-pages",
     summary:
-      "A branded link-in-bio page that turned a list of links into a home base — with an email list attached.",
-    metaTitle: "Maya Voss — Creator Landing Page Case Study",
+      "A link-in-bio page that turned a rented list of links into a home base with an email list attached.",
+    metaTitle: "Maya Voss: Creator Landing Page Case Study",
     metaDescription:
-      "How Muthu Creatives built a custom link-in-bio landing page for a creator — branded design, email capture, and instant load replacing a generic link list.",
+      "How Muthu Creatives built a custom link-in-bio page for a creator, with her own branding, email capture and instant loads inside social apps.",
     challenge: [
-      "Maya's audience lived on platforms she didn't control, and her link-in-bio was a generic list on someone else's domain — off-brand, untracked, and building an asset for the platform instead of for her.",
-      "She needed one page that felt like her brand, routed followers to what mattered this month, and quietly converted passing traffic into an email list she owns.",
+      "Maya's audience lives on platforms she doesn't control, and her bio link pointed at a generic link list on someone else's domain. Off-brand, untracked, and quietly building an asset for the link-tool company instead of for her.",
+      "She wanted one page that felt like her, pointed followers at whatever mattered this month, and turned passing traffic into an email list she actually owns.",
     ],
     approach: [
       {
         name: "A home base, not a link pile",
         detail:
-          "One branded page on her own domain — her look, her voice — with the current priority (launch, video, collab) always at the top.",
+          "One page on her own domain, in her own look and voice, with this month's priority always pinned to the top.",
       },
       {
         name: "Email capture built in",
         detail:
-          "A low-friction email signup sits mid-page, converting borrowed platform traffic into an audience no algorithm can take away.",
+          "A low-friction signup sits mid-page, quietly converting borrowed platform traffic into an audience no algorithm can take away.",
       },
       {
-        name: "Instant on mobile",
+        name: "Instant inside social apps",
         detail:
-          "Effectively all traffic comes from social apps on phones. The page is a few kilobytes of hand-written code — it loads before the in-app browser finishes its spinner.",
+          "Essentially all her traffic comes through in-app browsers on phones. The page is a few kilobytes of hand-written code, so it loads before the spinner finishes.",
       },
       {
-        name: "Editable priorities",
+        name: "Easy to reshuffle",
         detail:
-          "Links and featured content are simple to reorder, so the page tracks whatever she's promoting this week.",
+          "Links and featured content reorder in minutes, so the page keeps up with whatever she's promoting this week.",
       },
     ],
     outcome: [
-      "Maya's bio link now points to a page she owns, on her domain, in her brand — building her email list with every visit instead of advertising a link-tool startup.",
+      "Maya's bio link now points at a page she owns, on her domain, in her brand. Every visit either routes a follower somewhere useful or adds a subscriber to a list nobody can take from her.",
     ],
     stats: [
       { value: "<0.5s", label: "load inside in-app browsers" },
-      { value: "1 page", label: "one goal: own the audience" },
-      { value: "100%", label: "on her own domain and brand" },
+      { value: "1 page", label: "with one goal: own the audience" },
+      { value: "100%", label: "her domain, her brand" },
     ],
     stack: ["HTML & CSS", "JavaScript", "Tailwind CSS"],
-    cover: { from: "#2f2029", to: "#131313" },
+    accent: "#C77B9E",
     image: "/work/maya-voss.png",
-    imageAlt: "Maya Voss creator link-in-bio page built by Muthu Creatives — branded profile with featured links and audience stats",
+    imageAlt:
+      "Maya Voss link-in-bio page built by Muthu Creatives, showing a branded profile with featured links and audience stats",
     featured: false,
   },
 ];

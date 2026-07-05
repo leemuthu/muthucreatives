@@ -11,12 +11,12 @@ const projectTypes = [
   "Not sure yet",
 ];
 
-const budgetRanges = ["Under $500", "$500–$1,500", "$1,500–$5,000", "$5,000+"];
+const budgetRanges = ["Under $500", "$500 to $1,500", "$1,500 to $5,000", "$5,000+"];
 
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
 const inputStyles =
-  "w-full border border-line bg-night px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-brass focus:outline-none";
+  "w-full border border-hairline bg-night px-4 py-3.5 text-sm text-ink placeholder:text-mist/60 focus:border-flare focus:outline-none";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -43,19 +43,21 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="border border-brass/40 bg-surface p-8 text-center">
-        <p className="font-display text-2xl text-ink">Brief received.</p>
-        <p className="mt-3 text-sm leading-relaxed text-muted">
-          We&apos;ll reply within one business day. Want to skip ahead? Grab a
-          time on the calendar and we&apos;ll come prepared.
+      <div className="border border-flare/50 bg-coal p-8 text-center">
+        <p className="type-wide text-2xl font-black uppercase text-ink">
+          Got it.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-mist">
+          We’ll reply within one business day. Want to skip the wait? Grab a
+          time on the calendar and we’ll show up prepared.
         </p>
         <a
           href={site.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-block bg-brass px-6 py-3 text-sm font-medium text-night transition-colors hover:bg-ink"
+          className="mt-5 inline-block rounded-full bg-flare px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-night transition-colors hover:bg-ink"
         >
-          Book a call →
+          Book a call ↗
         </a>
       </div>
     );
@@ -65,7 +67,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-2 block text-sm text-ink">
+          <label htmlFor="name" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
             Name
           </label>
           <input
@@ -78,7 +80,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm text-ink">
+          <label htmlFor="email" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
             Email
           </label>
           <input
@@ -93,7 +95,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="business" className="mb-2 block text-sm text-ink">
+        <label htmlFor="business" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
           Business name
         </label>
         <input
@@ -107,7 +109,7 @@ export default function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="projectType" className="mb-2 block text-sm text-ink">
+          <label htmlFor="projectType" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
             What do you need?
           </label>
           <select id="projectType" name="projectType" className={inputStyles}>
@@ -119,7 +121,7 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="budget" className="mb-2 block text-sm text-ink">
+          <label htmlFor="budget" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
             Budget range
           </label>
           <select id="budget" name="budget" className={inputStyles}>
@@ -133,7 +135,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm text-ink">
+        <label htmlFor="message" className="mb-2 block font-mono text-xs uppercase tracking-widest text-mist">
           Tell us about the project
         </label>
         <textarea
@@ -149,18 +151,18 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-brass px-6 py-3.5 text-sm font-medium text-night transition-colors hover:bg-ink disabled:opacity-60 sm:w-auto"
+        className="w-full rounded-full bg-flare px-8 py-4 font-mono text-sm font-bold uppercase tracking-widest text-night transition-colors hover:bg-ink disabled:opacity-60 sm:w-auto"
       >
-        {status === "sending" ? "Sending…" : "Send project brief"}
+        {status === "sending" ? "Sending…" : "Send it over"}
       </button>
 
       {status === "error" && (
-        <p role="alert" className="text-sm text-brass">
-          The form didn&apos;t go through. Email us directly at{" "}
+        <p role="alert" className="text-sm text-flare">
+          The form didn’t go through. Email us at{" "}
           <a href={`mailto:${site.email}`} className="underline">
             {site.email}
           </a>{" "}
-          and we&apos;ll get right back to you.
+          and we’ll get right back to you.
         </p>
       )}
     </form>

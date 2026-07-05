@@ -1,26 +1,21 @@
-const results = [
-  "Landing pages live in 48 hours",
-  "3 hrs/day saved with one automation",
-  "Lighthouse 100 SEO scores",
-  "No templates — ever",
-  "Fixed-price proposals in writing",
-  "Houston, TX · clients nationwide",
+const items = [
+  "Landing pages",
+  "Business sites",
+  "Web apps",
+  "Automations",
 ];
 
 function TrackItems({ hidden = false }: { hidden?: boolean }) {
   return (
-    <ul
-      aria-hidden={hidden || undefined}
-      className="flex shrink-0 items-center"
-    >
-      {results.map((result) => (
+    <ul aria-hidden={hidden || undefined} className="flex shrink-0 items-center">
+      {items.map((item) => (
         <li
-          key={result}
-          className="flex shrink-0 items-center gap-6 pr-6 font-mono text-xs uppercase tracking-widest text-muted"
+          key={item}
+          className="type-wide flex shrink-0 items-baseline gap-8 pr-8 text-6xl font-black uppercase leading-none md:text-8xl"
         >
-          {result}
-          <span aria-hidden="true" className="text-brass">
-            ◆
+          <span className="text-outline-ink">{item}</span>
+          <span aria-hidden="true" className="text-3xl text-flare md:text-5xl">
+            *
           </span>
         </li>
       ))}
@@ -31,8 +26,8 @@ function TrackItems({ hidden = false }: { hidden?: boolean }) {
 export default function ResultsMarquee() {
   return (
     <aside
-      aria-label="Results at a glance"
-      className="overflow-hidden border-y border-line bg-surface py-4"
+      aria-label="What we build"
+      className="overflow-hidden border-y border-hairline bg-night py-8 md:py-10"
     >
       <div className="marquee-track flex w-max">
         <TrackItems />

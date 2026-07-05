@@ -6,7 +6,7 @@ export const site = {
   founder: "Lee Muthu",
   city: "Houston",
   region: "TX",
-  serviceArea: "Houston, TX — serving clients nationwide",
+  serviceArea: "Houston, TX. Working with clients nationwide.",
   tagline: "Custom websites, web apps, and automations for businesses serious about growth.",
   social: {
     instagram: "https://www.instagram.com/muthu.creatives",
@@ -19,21 +19,21 @@ export const processSteps = [
   {
     name: "Discovery",
     description:
-      "A free call where we talk through your goals, your customers, and what success looks like. We ask the right questions up front so nothing gets rebuilt later.",
+      "A free call. You talk, we ask a lot of questions, and we both figure out if this is a fit. No pitch deck, no pressure.",
   },
   {
     name: "Proposal",
     description:
-      "Clear scope, timeline, and price in writing before any work starts. No open-ended hourly billing, no surprise invoices.",
+      "Scope, timeline and price, in writing, before any work starts. The number you see is the number you pay.",
   },
   {
     name: "Build",
     description:
-      "We design and build it, you review it at every stage. Revisions are included — we iterate until it's right.",
+      "We build in the open. You'll see real pages in your browser within days, not mockups in a deck. Revisions are part of the deal.",
   },
   {
     name: "Launch",
     description:
-      "We go live, connect your domain, and hand over everything. Ongoing support is available if you want us in your corner.",
+      "We ship it, connect your domain and hand you the keys. Keep us around for support, or take the code and run. It's yours either way.",
   },
 ];

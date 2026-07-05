@@ -3,20 +3,22 @@ import BookCallButton from "@/components/BookCallButton";
 
 export default function NotFound() {
   return (
-    <section className="mx-auto flex max-w-6xl flex-col items-start px-5 pb-24 pt-44 md:px-8">
-      <p className="font-mono text-xs uppercase tracking-widest text-brass">404</p>
-      <h1 className="mt-5 max-w-2xl font-display text-5xl leading-tight text-ink md:text-6xl">
-        This page doesn&apos;t <em className="text-brass">convert</em> — it
-        doesn&apos;t exist.
-      </h1>
-      <p className="mt-6 max-w-md text-base leading-relaxed text-muted">
-        The link may be old or mistyped. Everything we build is one click from
-        the homepage.
+    <section className="mx-auto flex max-w-7xl flex-col items-start px-5 pb-24 pt-40 md:px-10">
+      <p className="font-mono text-xs font-bold uppercase tracking-widest text-flare">
+        404
       </p>
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <h1 className="type-wide mt-5 max-w-3xl text-5xl font-black uppercase leading-[0.95] text-ink md:text-7xl">
+        This page doesn’t <span className="text-flare">convert.</span> It
+        doesn’t exist.
+      </h1>
+      <p className="mt-6 max-w-md text-base leading-relaxed text-mist">
+        The link is old or mistyped. Everything we build is one click from the
+        homepage.
+      </p>
+      <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 border border-line px-6 py-3 text-sm text-ink transition-colors hover:border-brass hover:text-brass"
+          className="inline-flex items-center gap-2 rounded-full border border-hairline px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-ink transition-colors hover:border-flare hover:text-flare"
         >
           Back to homepage
         </Link>

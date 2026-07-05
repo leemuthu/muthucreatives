@@ -18,23 +18,22 @@ const faqSchema = {
 
 export default function FaqSection() {
   return (
-    <section aria-labelledby="faq-heading" className="border-t border-line">
+    <section aria-labelledby="faq-heading" className="bg-paper text-night">
       <JsonLd data={faqSchema} />
-      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
+      <div className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+        <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest text-brass">
-              Common questions
+            <p className="font-mono text-xs font-bold uppercase tracking-widest text-flare">
+              Fair questions
             </p>
             <h2
               id="faq-heading"
-              className="mt-4 font-display text-4xl leading-tight text-ink"
+              className="type-wide mt-4 text-5xl font-black uppercase leading-[0.95] md:text-6xl"
             >
               Asked before every project.
             </h2>
-            <p className="mt-5 text-sm leading-relaxed text-muted">
-              If yours isn&apos;t here, the discovery call exists exactly for
-              that — and it&apos;s free.
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-stone">
+              Yours isn’t here? That’s literally what the free call is for.
             </p>
           </Reveal>
           <Reveal delay={0.1}>

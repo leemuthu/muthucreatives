@@ -1,44 +1,44 @@
 # Muthu Creatives
 
 > Muthu Creatives is a web design studio in Houston, TX, founded and led by Lee Muthu.
-> We build custom websites, web apps, and automations for small and mid-sized businesses
-> across the United States. Every project is designed and coded from scratch — no
-> templates or page builders — with a fixed price in writing before work starts.
+> We build custom websites, web apps and automations for small and mid-sized businesses
+> across the United States. Every project is designed and coded from scratch, with no
+> templates or page builders, and priced as a fixed quote in writing before work starts.
 
 ## Key facts
 
 - Founder: Lee Muthu (Computer Science, University of Houston)
-- Location: Houston, Texas — serving clients nationwide
+- Location: Houston, Texas, serving clients nationwide
 - Contact: info@muthucreatives.com
 - Booking: free 20-minute intro call, linked from every page
-- Typical pricing: landing pages $500–$1,500; business websites $1,500–$5,000;
-  web apps from $1,500; automations $500–$2,500. Fixed-price proposals only.
-- Typical timelines: landing pages ~1 week; business websites 2–4 weeks;
-  web apps 1–6 weeks depending on scope
-- Process: Discovery (free call) → Proposal (fixed scope and price in writing)
-  → Build (revisions included) → Launch (client owns all code and content)
+- Typical pricing: landing pages $500 to $1,500; business websites $1,500 to $5,000;
+  web apps from $1,500; automations $500 to $2,500. Fixed-price proposals only.
+- Typical timelines: landing pages about 1 week; business websites 2 to 4 weeks;
+  web apps 1 to 6 weeks depending on scope
+- Process: Discovery (free call), then Proposal (fixed scope and price in writing),
+  then Build (revisions included), then Launch (client owns all code and content)
 
 ## Services
 
 - [Landing Pages](https://muthucreatives.com/services/landing-pages): single-goal,
-  conversion-focused pages, custom-coded, launched in about a week
+  conversion-focused pages, custom coded, usually live within a week
 - [Business Websites](https://muthucreatives.com/services/business-websites):
   multi-page sites for local businesses with local SEO and booking integration
 - [Web Apps](https://muthucreatives.com/services/web-apps): dashboards, client
-  portals, internal tools, and MVPs built in React and TypeScript
+  portals, internal tools and MVPs built in React and TypeScript
 - [Automations](https://muthucreatives.com/services/automations): tool integrations
   and workflows that eliminate manual, repetitive tasks
 
 ## Case studies
 
 - [Flowline](https://muthucreatives.com/portfolio/flowline): SaaS landing page,
-  built in 48 hours
+  built and live in 48 hours
 - [Maison Lumière](https://muthucreatives.com/portfolio/maison-lumiere): salon
-  website with 24/7 booking
+  website with around-the-clock booking
 - [Ember & Rye](https://muthucreatives.com/portfolio/ember-rye): restaurant site
   with a fully indexable HTML menu
 - [Apex Analytics](https://muthucreatives.com/portfolio/apex-analytics): React
-  analytics dashboard replacing manual spreadsheet reporting
+  analytics dashboard that replaced manual spreadsheet reporting
 - [FlowForge](https://muthucreatives.com/portfolio/flowforge): visual workflow
   builder saving an operations team 3 hours per day
 - [Maya Voss](https://muthucreatives.com/portfolio/maya-voss): creator
