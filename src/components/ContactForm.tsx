@@ -35,10 +35,16 @@ export default function ContactForm() {
 
     setStatus("sending");
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(site.formEndpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: `Project brief from ${data.name || "the website"}`,
+        }),
       });
       if (!response.ok) throw new Error(`Request failed: ${response.status}`);
       setStatus("sent");

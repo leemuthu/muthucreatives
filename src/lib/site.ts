@@ -4,6 +4,7 @@ export const site = {
   email: "info@muthucreatives.com",
   bookingUrl:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2w_svIWwEhW062nhiZNA5dXpARHHD8Ym3MAbGuAaYbN6d-j84JgtXazAXiH0mv1kWyXNHFPe9d?gv=true",
+  formEndpoint: "https://formspree.io/f/xpqgbroq",
   founder: "Lee Muthu",
   city: "Houston",
   region: "TX",

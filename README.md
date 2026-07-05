@@ -13,20 +13,15 @@ npm run dev
 
 ## Contact form
 
-The forms on the homepage and `/contact` post to `src/app/api/contact/route.ts`, which
-delivers email through [Resend](https://resend.com). Copy `.env.example` to `.env.local`
-and set `RESEND_API_KEY` (plus `CONTACT_FROM_EMAIL` once a sending domain is verified).
-Without a key the API returns 503 and the form tells the visitor to email directly.
-
-Because this is a server route, the site needs a host that runs Next.js (Vercel,
-Netlify, a Node server). It will not work as a purely static export unless the form is
-pointed at an external service instead.
+The forms on the homepage and `/contact` post directly to [Formspree](https://formspree.io).
+The endpoint lives in `src/lib/site.ts` (`formEndpoint`); change it there to point at a
+different Formspree form. There are no server routes and no secrets to configure, so the
+form works on any host, static or dynamic.
 
 ## Deployment
 
-The site is built to deploy on [Vercel](https://vercel.com): connect the GitHub repo,
-add the `RESEND_*` and `CONTACT_*` environment variables, and point the domain at the
-project. Any push to `main` redeploys.
+Connect the GitHub repo to [Vercel](https://vercel.com) and point the domain at the
+project. No environment variables are needed. Any push to `main` redeploys.
 
 ## Structure
 
