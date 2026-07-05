@@ -363,6 +363,11 @@ export const services: Service[] = [
         detail:
           "Optional ongoing support to keep everything healthy as your tools and processes change.",
       },
+      {
+        name: "You own the workflows",
+        detail:
+          "Whether it's built on a platform or custom scripts, the account and the logic are yours. No dependency on us to keep it running.",
+      },
     ],
     forWho: [
       "Ops teams drowning in copy-paste between systems",

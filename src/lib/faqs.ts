@@ -20,11 +20,6 @@ export const faqs: Faq[] = [
       "No. Everything is designed and coded from scratch around your business. It's why our sites load faster and rank better than template sites, and why yours won't look like anyone else's. You own the code outright.",
   },
   {
-    question: "Where is Muthu Creatives located?",
-    answer:
-      "Houston, Texas. About half our clients are local and the rest are spread across the country. Distance changes nothing: calls, screen shares and written proposals either way.",
-  },
-  {
     question: "What happens after launch?",
     answer:
       "You own everything: domain, code, content. Post-launch fixes are included with every project, and if you'd rather never think about your website again, ongoing support is available.",

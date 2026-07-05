@@ -49,7 +49,7 @@ export default function Hero() {
             className="hero-fade mt-7 font-mono text-xs tracking-wide text-mist"
             style={{ animationDelay: "0.7s" }}
           >
-            Free 20-minute call. Fixed quote in writing. Lee leads every project.
+            Free 20-minute call. Fixed quote in writing. Hands-on from day one.
           </p>
         </div>
       </div>
