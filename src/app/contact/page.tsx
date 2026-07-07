@@ -7,14 +7,13 @@ import JsonLd from "@/components/JsonLd";
 import BookCallButton from "@/components/BookCallButton";
 import Magnetic from "@/components/Magnetic";
 import { site } from "@/lib/site";
+import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact | Book a Free Call | Web Design in Houston, TX",
   description:
     "Book a free 20-minute call with Muthu Creatives or send a project brief. Custom websites, web apps and automations from Houston, TX, serving clients nationwide.",
-  alternates: {
-    canonical: "/contact",
-  },
+  ...pageSeo("/contact"),
 };
 
 const contactSchema = {

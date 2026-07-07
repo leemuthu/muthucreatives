@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Hero from "@/components/home/Hero";
 import ResultsMarquee from "@/components/ResultsMarquee";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -13,9 +14,7 @@ export const metadata: Metadata = {
   title: "Muthu Creatives | Custom Websites & Web Apps That Convert | Houston, TX",
   description:
     "We build sites that convert. Custom websites, web apps and automations, designed and coded from scratch in Houston, TX. No templates, fixed quotes, founder-led.",
-  alternates: {
-    canonical: "/",
-  },
+  ...pageSeo("/"),
 };
 
 export default function HomePage() {

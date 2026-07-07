@@ -6,14 +6,13 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import JsonLd from "@/components/JsonLd";
 import { caseStudies } from "@/lib/case-studies";
 import { site } from "@/lib/site";
+import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Portfolio | Web Design Case Studies",
   description:
     "Six case studies from Muthu Creatives: landing pages, business websites, web apps and automations, each with the result it produced. Houston, TX.",
-  alternates: {
-    canonical: "/portfolio",
-  },
+  ...pageSeo("/portfolio"),
 };
 
 const portfolioSchema = {

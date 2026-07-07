@@ -10,6 +10,7 @@ import StatCounter from "@/components/StatCounter";
 import { caseStudies, getCaseStudy } from "@/lib/case-studies";
 import { getService } from "@/lib/services";
 import { site } from "@/lib/site";
+import { pageSeo } from "@/lib/seo";
 
 type CaseStudyPageProps = {
   params: Promise<{ slug: string }>;
@@ -28,9 +29,7 @@ export async function generateMetadata({
   return {
     title: study.metaTitle,
     description: study.metaDescription,
-    alternates: {
-      canonical: `/portfolio/${study.slug}`,
-    },
+    ...pageSeo(`/portfolio/${study.slug}`),
   };
 }
 

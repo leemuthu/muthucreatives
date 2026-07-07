@@ -6,14 +6,13 @@ import CtaBanner from "@/components/CtaBanner";
 import BookCallButton from "@/components/BookCallButton";
 import { services } from "@/lib/services";
 import { getCaseStudiesForService } from "@/lib/case-studies";
+import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Web Design, Development & SEO Services in Houston, TX",
   description:
     "Landing pages, business websites, web apps, automations and SEO, custom-built by Muthu Creatives in Houston. Fixed quotes in writing, no templates, you own the code.",
-  alternates: {
-    canonical: "/services",
-  },
+  ...pageSeo("/services"),
 };
 
 export default function ServicesPage() {

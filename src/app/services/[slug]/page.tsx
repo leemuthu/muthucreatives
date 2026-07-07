@@ -12,6 +12,7 @@ import Magnetic from "@/components/Magnetic";
 import { getService, services } from "@/lib/services";
 import { getCaseStudy } from "@/lib/case-studies";
 import { site } from "@/lib/site";
+import { pageSeo } from "@/lib/seo";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -30,9 +31,7 @@ export async function generateMetadata({
   return {
     title: service.metaTitle,
     description: service.metaDescription,
-    alternates: {
-      canonical: `/services/${service.slug}`,
-    },
+    ...pageSeo(`/services/${service.slug}`),
   };
 }
 

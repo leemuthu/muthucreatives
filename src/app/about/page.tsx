@@ -8,14 +8,13 @@ import TestimonialCard from "@/components/TestimonialCard";
 import JsonLd from "@/components/JsonLd";
 import { site, processSteps } from "@/lib/site";
 import { testimonials } from "@/lib/testimonials";
+import { pageSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About Lee Muthu | Founder of Muthu Creatives, Houston, TX",
   description:
     "Muthu Creatives is a Houston web design agency led by founder Lee Muthu, who studied Computer Science at the University of Houston and works hands-on with every client from kickoff to launch.",
-  alternates: {
-    canonical: "/about",
-  },
+  ...pageSeo("/about"),
 };
 
 const aboutSchema = {

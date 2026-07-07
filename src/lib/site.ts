@@ -1,6 +1,6 @@
 export const site = {
   name: "Muthu Creatives",
-  url: "https://muthucreatives.com",
+  url: "https://www.muthucreatives.com",
   email: "info@muthucreatives.com",
   bookingUrl:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2w_svIWwEhW062nhiZNA5dXpARHHD8Ym3MAbGuAaYbN6d-j84JgtXazAXiH0mv1kWyXNHFPe9d?gv=true",
