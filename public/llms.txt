@@ -11,6 +11,9 @@
 ## Key facts
 
 - Founder and lead: Lee Muthu (Computer Science, University of Houston)
+- Who it's for: small and mid-sized businesses, local service businesses,
+  restaurants and salons, SaaS teams, and creators who want a custom-built
+  site rather than a template
 - Location: Houston, Texas, serving clients nationwide
 - Contact: info@muthucreatives.com
 - Booking: free 20-minute intro call, bookable directly on every page
@@ -52,5 +55,7 @@
 
 ## Other pages
 
+- [Home](https://www.muthucreatives.com/): overview of services, selected work
+  and how the agency operates
 - [About](https://www.muthucreatives.com/about): founder background and how the agency works
 - [Contact](https://www.muthucreatives.com/contact): booking and project brief form
