@@ -73,10 +73,24 @@ export default async function ServicePage({ params }: ServicePageProps) {
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <JsonLd data={serviceSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
 
       <PageHero eyebrow={`Services / ${service.name}`} title={service.tagline}>
         <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">

@@ -7,12 +7,12 @@ export const faqs: Faq[] = [
   {
     question: "How much does a custom website cost?",
     answer:
-      "It depends on scope: a one-page site costs a lot less than a multi-page business site or a custom web app. Every project gets a fixed quote in writing after a free discovery call, once we actually know what you need. No hourly billing, no surprise invoices.",
+      "Cost depends on scope, but every project gets a fixed quote in writing before any work starts, not an hourly rate. A one-page site runs far less than a multi-page business site or a custom web app, and the free discovery call is what pins down which one you actually need.",
   },
   {
     question: "How long does a website take to build?",
     answer:
-      "A landing page is usually live within a week. A business website takes two to four weeks. Web apps range from about a week for a focused tool up to six weeks for a full dashboard. Your proposal comes with a real date, not a shrug.",
+      "Most projects take one to six weeks depending on what you're building: a landing page is usually live within a week, a multi-page business website takes two to four weeks, and a full web app can take up to six. Your proposal comes with a real date, not a shrug.",
   },
   {
     question: "Do you use templates or website builders?",
@@ -37,7 +37,7 @@ export const faqs: Faq[] = [
   {
     question: "Do you handle SEO?",
     answer:
-      "Every site ships with the technical basics built in: clean structure, fast loads, structured data and per-page metadata. If you need more, ongoing SEO and AI answer engine optimization is its own service.",
+      "Yes, in two ways: every site ships with the technical basics built in (clean structure, fast loads, structured data, per-page metadata), and if you want to go further, ongoing SEO and AI answer engine optimization is its own service.",
   },
   {
     question: "Will I actually be talking to you, or to a project manager?",

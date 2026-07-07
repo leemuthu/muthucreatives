@@ -509,7 +509,7 @@ export const services: Service[] = [
       {
         question: "How is this different from what you already build into every site?",
         answer:
-          "Every site we build ships with the technical basics: fast loads, semantic structure, schema markup. SEO as a standalone service goes further, fixing an existing site's problems or pushing an already-solid site harder on rankings and AI visibility.",
+          "The standalone service goes further than what's already built in: it fixes an existing site's problems or pushes an already-solid site harder on rankings and AI visibility. Every site we build ships with the technical basics, fast loads, semantic structure, schema markup, as a baseline, not the full service.",
       },
       {
         question: "Can you guarantee a ranking?",
